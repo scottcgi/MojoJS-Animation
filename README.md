@@ -1,10 +1,10 @@
 MojoJS
-======
+--
 
 It is a javascript framework
 
 
-****
+
 
 
 ### CSS query engine: mojoQuery

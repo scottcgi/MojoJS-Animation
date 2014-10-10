@@ -1,10 +1,10 @@
 MojoJS
---
+======
 
 It is a javascript framework
 
 
-
+<br><br><br>
 
 
 ### CSS query engine: mojoQuery
@@ -21,7 +21,8 @@ It's a part of mojo, but also can be easily independent use it or integration to
 * Doc and API see mojoQuery
 * Checkout speed test with others js framework (Live demo)
 
-<br>
+
+<br><br><br>
 
 
 ### Animation engine: mojoFx

@@ -1,0 +1,99 @@
+
+body {
+    color: #49433A;
+    font-family: Verdana,Helvetica,Arial,cursive,"Microsoft YaHei";
+    font-size: 14px;
+}
+
+div {
+	position:relative;
+	display:block;
+}
+
+h5 {
+	margin:8px 0 0 0;
+	padding:0;
+}
+
+ul {
+	margin:0;
+	padding:0;
+}
+
+code {
+	margin:0;
+	padding:0;
+}
+
+.api {
+	margin: 15px auto;
+}
+
+.api-title {
+	width: 90%;
+	background-color: #0D5995;
+	border: 1px solid #0D5995;
+	color: #fff;
+	padding: 5px 12px;
+	margin:0 auto;
+}
+
+.api-title span.right {
+	float: right;
+}
+
+.api-title span.left {
+	float: left;
+}
+
+.api-body {
+	border: 1px solid #0D5995;
+	border-top: none;
+	width: 90%;
+	padding: 5px 12px;
+	margin:0 auto;
+}
+
+.api-desc, .api-example {
+	padding: 2px 25px;
+	margin: 0;
+	overflow: hidden;
+}
+
+.api-desc ul li, .api-example ul li {
+	list-style: circle inside;
+	padding:5px;
+}
+
+.api-sub-desc {
+	padding: 5px 5px 5px 16px;
+}
+
+.api-example pre {
+	padding: 10px;
+	background-color:#F8F8F8;
+	border: 1px dotted #CCCCCC;
+}
+
+.toggle {
+	font-size: 18px;
+	font-weight: bolder;
+	color: #356AA0;
+	cursor: pointer;
+}
+
+.hidden {
+	display: none;
+}
+
+.target {
+    border: 1px dashed #73880A;
+    height: 100px;
+    width: 100px;
+}
+
+.clear {
+	clear: both;
+}
+
+

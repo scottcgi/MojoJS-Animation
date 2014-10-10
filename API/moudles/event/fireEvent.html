@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<title>mojo event - fireEvent</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script type="text/javascript" src="../../js/head.js"></script>
+	</head>
+	
+<body>
+	
+<pre id="id1">
+<div class="target" id="id1-target1">#id1-target1</div>	
+<button onclick="exeScript('id1-source1')">addEvent</button>
+<code id="id1-source1">
+mojo("#id1-target1").addEvent({
+	'click': foo,
+	'mouseover': foo
+});
+</code>
+<button onclick="exeScript('id1-source2')">fireEvent</button>
+<code id="id1-source2">
+mojo("#id1-target1").fireEvent("click");
+</code>
+<button onclick="exeScript('id1-source3')">fireEvent</button>
+<code id="id1-source3">
+mojo("#id1-target1").fireEvent("click", {
+	ctrlKey: true,
+	shiftKey: true,
+	altKey: true,
+	clientX: 9999,
+	clientY: 9999
+});
+</code>
+<button onclick="exeScript('id1-source4')">fireEvent</button>
+<code id="id1-source4">
+mojo("#id1-target1").fireEvent("mouseover", {
+	ctrlKey: true,
+	shiftKey: true,
+	altKey: true,
+	clientX: 9999,
+	clientY: 9999,
+	relatedTarget: mojo.query('button')[0]
+});
+</code>
+</pre>
+
+
+</body>
+
+<script type="text/javascript">
+var body = document.body;
+	
+API.add({
+	title: [
+		"fireEvent", 
+		"String eventType, Object eventVal[可选], String initType[可选]", 
+		"mojo"
+	],
+	summary: [
+		"手动触发事件"
+	],
+	params: [{
+		name: "eventType: String",
+		desc: "事件类型"
+	}, {
+		name: "eventVal: Object[可选]",
+		desc: "event事件对象的自定义值, 根据initType类型选择填充event值"
+	}, {
+		name: "initType: String[可选]",
+		desc: "事件对象的初始化类型, 有以下:",
+		child: [{
+			name: "MouseEvents[默认]",
+			desc: "eventVal可选值: canBubble, cancelable, view, detail, screenX, screenY, clientX, clientY, ctrlKey, altKey, shiftKey, metaKey, button, relatedTarget"
+		}, {
+			name: "HTMLEvents",
+			desc: "eventVal可选值: bubbles, cancelable"
+		}, {
+			name:　"UIEvents",
+			desc: "eventVal可选值: canBubble, cancelable, view, detail"
+		}, {
+			name:　"KeyboardEvent",
+			desc: "eventVal可选值: bubbles, cancelable, viewArg, ctrlKeyArg, altKeyArg, shiftKeyArg, metaKeyArg, keyCodeArg, charCodeArg"
+		}]
+	}],
+	rt: [{
+		name: "mojo"
+	}],
+	examples: [{
+		desc: "触发自定义事件",
+		codeId: "id1"
+	}]
+})
+
+.render(body);
+
+
+function foo() {
+	var event = this.fixEvent();
+	
+    log.info('charCode: {}', event.charCode)
+	   .info('isChar: {}', event.isChar)
+	   .info('keyCode: {}', event.keyCode)
+	   .info('eventPhase: {}', event.eventPhase)
+	   .info('pageX:: {}', event.pageX)
+	   .info('pageY: {}', event.pageY)
+	   .info('preventDefault: {}', 
+	         event.preventDefault.toString().replace(/\s/g, ''))
+	   .info('relatedTarget: {}', event.relatedTarget)
+	   .info('stopPropagation: {}', 
+	         event.stopPropagation.toString().replace(/\s/g, ''))
+	   .info('target: {}', event.target)
+	   .info('timeStamp: {}', event.timeStamp)
+	   .info('altKey: {}', event.altKey)
+	   .info('ctrlKey: {}', event.ctrlKey)
+	   .info('shiftKey: {}', event.shiftKey)
+	   .info('clientX: {}', event.clientX)
+	   .info('clientY: {}', event.clientY)
+	   .info('screenX: {}', event.screenX)
+	   .info('screenY: {}', event.screenY)
+	   .info('type: {}', event.type)
+       .alert(); 	
+}
+</script>
+</html>

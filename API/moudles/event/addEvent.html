@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<title>mojo event - addEvent</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script type="text/javascript" src="../../js/head.js"></script>
+	</head>
+	
+<body>
+
+<pre id="id1">
+<div class="target" id="id1-target1">#id1-target1</div>	
+<button onclick="exeScript('id1-source1')">addEvent</button>
+<code id="id1-source1">
+mojo("#id1-target1").addEvent("click", function(){
+    log.info('触发事件元素: {}', this.el)
+       .info('事件类型: {}', this.event.type)
+       .info('元素索引: {}', this.index) 
+       .alert(); 
+});
+</code>
+</pre>
+
+
+
+<pre id="id4">
+<div class="target" id="id4-target1">#id4-target1</div>	
+<button onclick="exeScript('id4-source1')">addEvent</button>
+<code id="id4-source1">
+mojo("#id4-target1").addEvent("click", function(){
+    log.info('执行一次的{}事件', this.event.type)
+       .alert(); 
+	
+    mojo(this.el).removeEvent(this.event.type, this.self);   
+});
+</code>
+</pre>
+
+
+
+<pre id="id5">
+<div class="target" id="id5-target1">#id5-target1</div>	
+<button onclick="exeScript('id5-source1')">addEvent</button>
+<code id="id5-source1">
+mojo("#id5-target1").addEvent("click", function(){ 
+	var event = this.fixEvent();
+	
+    log.info('charCode: {}', event.charCode)
+	   .info('isChar: {}', event.isChar)
+	   .info('keyCode: {}', event.keyCode)
+	   .info('eventPhase: {}', event.eventPhase)
+	   .info('pageX:: {}', event.pageX)
+	   .info('pageY: {}', event.pageY)
+	   .info('preventDefault: {}', 
+	         event.preventDefault.toString().replace(/\s/g, ''))
+	   .info('relatedTarget: {}', event.relatedTarget)
+	   .info('stopPropagation: {}', 
+	         event.stopPropagation.toString().replace(/\s/g, ''))
+	   .info('target: {}', event.target)
+	   .info('timeStamp: {}', event.timeStamp)
+	   .info('altKey: {}', event.altKey)
+	   .info('ctrlKey: {}', event.ctrlKey)
+	   .info('shiftKey: {}', event.shiftKey)
+	   .info('clientX: {}', event.clientX)
+	   .info('clientY: {}', event.clientY)
+	   .info('screenX: {}', event.screenX)
+	   .info('screenY: {}', event.screenY)
+	   .info('type: {}', event.type)
+       .alert(); 
+});
+</code>
+</pre>
+
+
+
+<pre id="id2">
+<div class="target" id="id2-target1">#id2-target1</div>
+
+<button onclick="exeScript('id2-source1')">addEvent</button>
+<code id="id2-source1">	
+mojo('#id2-target1').addEvent('click', {
+	args: 'test',
+	fn: function(arg){
+	    log.info('传入参数为: {}', arg)
+	       .info('这是点击事件!')
+	       .alert();
+    }
+})
+.addEvent('click', {
+	args: ['a', 'b'],
+	fn: function(arg1, arg2){
+		log.info('第一个: {}, 第二个: {}', arg1, arg2)
+		   .info('这还是点击事件!')
+		   .alert();
+    }
+});	
+</code>
+</pre>
+
+
+
+
+
+
+<pre id="id3">
+<div class="target" id="id3-target1">#id3-target1</div>
+<button onclick="exeScript('id3-source1')">addEvent</button>
+<code id="id3-source1">	
+mojo('#id3-target1').addEvent({
+	'mouseover': function(){
+		log.info('事件: {}', this.event.type)
+		   .render(this.el);
+	},
+	
+	'mouseout': {
+		args: 'ok',
+		fn: function(arg){
+			log.info('事件: {}, 参数: {}', this.event.type, arg)
+			.render(this.el);
+		}
+	} 
+});	
+</code>
+</pre>
+
+</body>
+	<script type="text/javascript">
+		var body = document.body;
+		
+		API.add({
+			title: [
+				"addEvent",
+				"String eventType, Function fn",
+				"mojo"
+			],
+			summary: [
+				"添加对应事件类型的事件处理函数"
+			],
+			params: [{
+				name: "eventType: String",
+				desc: "事件类型"
+			}, {
+				name: "fn: Function",
+				desc: "事件处理函数, 函数上下文对象this含有以下属性:",
+				child: [{
+					name: "el: HTMLElement",
+					desc: "触发事件的元素"
+				}, {
+					name: "event: Object",
+					desc: "原生事件对象"
+				}, {
+					name: "index: Number",
+					desc: "当前对象在mojo对象的索引"
+				}, {
+					name: "self: Function",
+					desc: "当前执行的函数"
+				}, {
+					name: "fixEvent: Function",
+					desc: "调整IE event对象兼容标准, 此方法调用后, this.event对像即为调整后对象. 兼容属性如下:",
+					child: [{
+						name: "button: Number",
+						desc: "特定鼠标事件, 表示按下的按钮:",
+						child: [{
+							name: "0 - 未按下按钮"
+						}, {
+							name: "1 - 按下左键"
+						}, {
+							name: "2 - 按下右键"
+						}, {
+							name: "3 - 同时左右键"
+						}, {
+							name: "4 - 中键"
+						}, {
+							name: "5 - 左键和中键"
+						}, {
+							name: "6 - 右键和中键"
+						}, {
+							name:　"7 - 左中右键"
+						}]
+					}, {
+						name: "charCode: Number",
+						desc: "keypress事件, 按下按钮的unicode字符"
+					}, {
+						name: "isChar: Boolean",
+						desc: "按下键是否有字符与之相关"
+					}, {
+						name: "keyCode: Number",
+						desc: "按下按钮的数字代号"
+					} , {
+						name: "eventPhase: Number",
+						desc: "事件所处的阶段, 0 - 捕获, 1 - 目标, 2 - 冒泡"
+					}, {
+						name: "pageX: Number",
+						desc: "鼠标相对于页面的X坐标"
+					}, {
+						name: "pageY: Number",
+						desc: "鼠标相对于页面的Y坐标"
+					}, {
+						name: "preventDefault: Function",
+						desc: "阻止事件默认行为"
+					}, {
+						name: "relatedTarget: HTMLElement",
+						desc: "鼠标事件中的第二目标元素"
+					}, {
+						name: "stopPropagation: Function",
+						desc: "阻止事件冒泡"
+					}, {
+						name: "target: HTMLElement",
+						desc: "事件目标元素"
+					}, {
+						name: "timeStamp: Number",
+						desc: "触发事件的时间戳"
+					}, {
+						name: "altKey: Boolean",
+						desc: "是否按下ALT键"
+					}, {
+						name: "ctrlKey: Boolean",
+						desc: "是否按下CTRL键"
+					}, {
+						name: "shiftKey: Boolean",
+						desc: "是否按下shift键"
+					}, {
+						name: "clientX: Number",
+						desc: "鼠标在客户端区域的X坐标"
+					}, {
+						name: "clientY: Number",
+						desc: "鼠标在客户端区域的Y坐标"
+					}, {
+						name: "screenX: Number",
+						desc: "鼠标在屏幕的X坐标"
+					}, {
+						name: "screentY: Number",
+						desc: "鼠标在屏幕的Y坐标"
+					}, {
+						name: "type: String",
+						desc:　"事件类型"
+					}]
+				}]
+			}],
+			rt: [{
+				name: "mojo"
+			}],
+			examples: [{
+				desc: "添加点击事件",
+				codeId: "id1"
+			}, {
+				desc: "执行一次的事件",
+				codeId: "id4"
+			}, {
+				desc: "事件对象",
+				codeId: "id5"
+			}]
+		})
+		
+		//
+		.add({
+			title: [
+				"addEvent",
+				"String eventType, Object config",
+				"mojo"
+			],
+			summary: [
+				"根据函数配置对象, 添加对应事件类型"
+			],
+			params: [{
+				name: "eventType: String",
+				desc: "事件类型"
+			},{
+				name: "config: Object",
+				desc: "事件函数配置对象, 含有以下属性:",
+				child: [{
+					name: "args(可选): Array | Any",
+					desc: "事件函数的参数"
+				}, {
+					name: "fn: Function",
+					desc: "事件函数"
+				}]
+			}],
+			rt: [{
+				name: "mojo"
+			}],
+			examples: [{
+				desc: "添加点击事件",
+				codeId: "id2"
+			}]
+		})
+		
+		//
+		.add({
+			title: [
+				"addEvent",
+				"Object config",
+				"mojo"
+			],
+			summary: [
+				"根据配置对象添加事件处理"
+			],
+			params: [{
+				name: "config: Object",
+				desc: "事件配置对象, 含有以下属性:",
+				child: [{
+					name: "eventType: String",
+					desc: "事件类型"
+				}, {
+					name: "fn: Function | config: Object",
+					desc: "事件函数或函数配置对象, 见:",
+					child: [{
+						name: "addEvent(String eventType, Function fn)"
+					},{
+						name:　"addEvent(String eventType, Object config)"
+					}]
+				}]
+			}],
+			rt: [{
+				name: "mojo"
+			}],
+			examples: [{
+				desc: "添加鼠标事件",
+				codeId: "id3"
+			}]
+		})		
+		
+		 //
+		 .render(body);
+
+		
+	</script>
+</html>

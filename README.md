@@ -4,12 +4,12 @@ MojoJS
 It is a javascript framework
 
 
-## CSS query engine: mojoQuery
+### CSS query engine: mojoQuery
 
 mojoQuery a pure-JavaScript CSS selector engine. <br>
 It's a part of mojo, but also can be easily independent use it or integration to any place.
 
-### Features
+#### Features
 
 * Completely standalone (no library dependencies)
 * CSS 3 Selector full support and more
@@ -21,9 +21,17 @@ It's a part of mojo, but also can be easily independent use it or integration to
 <br>
 
 
-## Animation engine: mojoFx
+### Animation engine: mojoFx
 
 mojoFx a pure-JavaScript animation engine. <br>
 It's a part of mojo, but also can be easily independent use it or integration to any place.
 
-### Features
+#### Features
+
+* Support all css animation include color property
+* Support queue and concurrent animation
+* Support delay queue animation function
+* Global animation control, only one setInterval executor all animation
+* Fully compatible standard Easing effect
+* Doc and API see mojoFx
+* Online Live demo test

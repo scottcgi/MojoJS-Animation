@@ -20,7 +20,7 @@ It's a part of mojo, but also can be easily independent use it or integration to
 * Highly extensible with easy-to-use API
 * Doc and API see mojoQuery
 * Checkout speed test with others js framework [Live speed test](https://scottcgi.github.io/MojoJS/Test/mojoQuery/speedTest/index.html "speed test")
-
+* [Wiki page](https://github.com/scottcgi/MojoJS/wiki/MojoFX "wiki page")
 
 <br>
 
@@ -39,3 +39,4 @@ It's a part of mojo, but also can be easily independent use it or integration to
 * Fully compatible standard Easing effect
 * Doc and API see mojoFx
 * [Online Live demo test](https://scottcgi.github.io/MojoJS/Test/mojoFx/mojoFx-test.html "animation test")
+* [Wiki page](https://github.com/scottcgi/MojoJS/wiki/MojoQuery "wiki page")

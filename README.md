@@ -19,7 +19,7 @@ It's a part of mojo, but also can be easily independent use it or integration to
 * Fully compatible standards
 * Highly extensible with easy-to-use API
 * Doc and API see mojoQuery
-* Checkout speed test with others js framework [Live speed test](http://http://scottcgi.github.io/MojoJS/Test/mojoQuery/speedTest/index.html "speed test")
+* Checkout speed test with others js framework ![Live speed test](https://scottcgi.github.io/MojoJS/Test/mojoQuery/speedTest/index.html "speed test")
 
 
 <br>
@@ -38,4 +38,4 @@ It's a part of mojo, but also can be easily independent use it or integration to
 * Global animation control, only one setInterval executor all animation
 * Fully compatible standard Easing effect
 * Doc and API see mojoFx
-* [Online Live demo test](http://scottcgi.github.io/MojoJS/Test/mojoFx/mojoFx-test.html "animation test")
+* ![Online Live demo test](https://scottcgi.github.io/MojoJS/Test/mojoFx/mojoFx-test.html "animation test")

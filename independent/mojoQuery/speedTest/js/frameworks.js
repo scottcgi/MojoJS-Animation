@@ -1,6 +1,9 @@
 /**
  * test frameworks
  */
+var oldIE = window.ActiveXObject && !document.addEventListener,
+    jquery_name = oldIE ? "jquery-1.11.3" : "jquery-2.1.4";
+
 window.frameworks = [
 //[iframe name, file name, css query method]
 
@@ -8,7 +11,7 @@ window.frameworks = [
 
 ["mojoQuery", "../mojoQuery.js", "mojoQuery"],
 
-["jquery-2.1.1", "http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js", "$"],
+[jquery_name, "https://code.jquery.com/" + jquery_name + ".js", "$.find"],
 
 ["sizzle-1.10.19", "http://apps.bdimg.com/libs/sizzle/1.10.19/sizzle.min.js", "Sizzle"],
 
@@ -19,3 +22,5 @@ window.frameworks = [
 ["dojo-1.8.3", "http://apps.bdimg.com/libs/dojo/1.8.3/dojo.js", "dojo.query"]
 
 ];
+
+if (!("querySelectorAll" in document)) frameworks = frameworks.slice(1);

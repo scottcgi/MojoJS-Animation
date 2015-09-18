@@ -267,7 +267,7 @@
 		            if (this.rex.ATTR.test(attr)) {
 		                attr = RegExp["$'"];
 		                // [function, name, value] are put in arr
-		                arr.push(attrs[RegExp["$&"]], RegExp["$`"], attr);
+		                arr.push(attrs[RegExp["$&"]], RegExp["$`"], attr.replace(/^["']|["']$/g, ""));
 		            } else {
 		                // only has attribute name
 		                arr.push(attrs[" "], attr, "");

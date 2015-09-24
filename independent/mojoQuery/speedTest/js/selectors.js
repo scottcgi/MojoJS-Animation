@@ -28,10 +28,18 @@ window.relativeSelectors = [
 'div, p, a',
 
 'div, div, div',
-		
-'#title', 
-			
-'div#title'
+
+'.box .w-button',
+
+'.box .pg .pg-bar',
+
+'body #view',
+
+'#view',
+
+'div#view',
+'#view.go',
+'a#view'
 
 ];
 
@@ -51,7 +59,12 @@ window.clsSelectors = [
 			
 'ul.toc li.tocline2', 
 			
-'ul.toc > li.tocline2'
+'ul.toc > li.tocline2',
+
+'.w-button',
+'.inline',
+'.inline-block.w-button',
+'.inline-blockw-button'
 
 ];
 
@@ -61,11 +74,14 @@ window.attrSelectors = [
 			
 'div[class]', 
 			
-'div[class=example]', 
+'div[class=example]',
+'div[class="example"]',
 			
-'div[class^=exa]', 
+'div[class^=exa]',
+'div[class^="exa"]',
 			
-'div[class$=mple]', 
+'div[class$=mple]',
+'div[class$="mple"]',
 			
 'div[class*=e]', 
 			
@@ -233,7 +249,23 @@ window.crazySelectors = [
 ];
 
 window.customSelectors = [
+'div#view',
+'#view.go',
+'a#view',
 
+'.box .w-button',
+
+'.box .pg .pg-bar',
+
+'body #view',
+
+'.inline',
+'*.fn.url',
+'.inline-block.w-button',
+'.inline-blockw-button',
+'.example.example',
+
+'div[x="1-1"]'
 ];
 
 window.allSelectors = relativeSelectors.concat(clsSelectors).concat(attrSelectors).concat(pseuSelectors);

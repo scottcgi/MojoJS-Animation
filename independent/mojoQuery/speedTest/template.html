@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" debug="true">
@@ -3548,7 +3548,47 @@ V         v|\\0{0,4}(58|78)(\r\n|[ \t\r\n\f])?|\\v
     </dd> 
    <!----> 
   </dl> 
-  <!--end-informative--> 
-  
+  <!--end-informative-->
+
+    <div class="box">
+        <div x="1-2">
+            <a class="inline-block w-button w-red w-disabled">禁用按钮</a>
+            <a class="inline-block w-button w-red">快速注册</a>
+            <a class="inline-block w-button w-green">绿光</a>
+            <a class="inline-block w-button w-blue">保存</a>
+            <a class="inline-block w-button w-dark">取消</a>
+            <a class="inline-block w-button w-light">Light</a>
+        </div>
+        <br />
+        <div class="pg">
+            <div class="inline-block pg-bar" x="1-1"></div>
+            <div class="inline-block pg-text" x="1-1"></div>
+        </div>
+        <div style="width:500px;height:200px;overflow:auto;">
+            <div style="height:50px;"></div>
+            <div style="">
+                <div class="inline-block">
+                    <select style="width:200px;height:28px;">
+                        <optgroup label="G1">
+                            <option disabled="disabled">支持的属性值</option>
+                            <option disabled="disabled">G1 Test 2</option>
+                            <option disabled="disabled">G1 Test 3</option>
+                            <option>G1 Test 4</option>
+                        </optgroup>
+                        <optgroup label="G2">
+                            <option>G2 Test 1</option>
+                            <option>G2 Test 2</option>
+                            <option>G2 Test 3</option>
+                            <option>G2 Test 4</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="inline-block selw"></div>
+            </div>
+            <div style="height:400px;"></div>
+        </div>
+    </div>
+
+    <div id="view"></div>
 </body>
 </html>

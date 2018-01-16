@@ -3,10 +3,6 @@ MojoJS
 
 It is a javascript framework
 
-
-<br>
-
-
 ### CSS query engine: mojoQuery
 
 mojoQuery a pure-JavaScript CSS selector engine. <br>
@@ -21,9 +17,6 @@ It's a part of mojo, but also can be easily independent use it or integration to
 * Doc and API see mojoQuery
 * Checkout speed test with others js framework [Live speed test](http://scottcgi.github.io/MojoJS/Test/mojoQuery/speedTest/index.html "speed test")
 * [Wiki page](https://github.com/scottcgi/MojoJS/wiki/MojoQuery "wiki page")
-
-<br>
-
 
 ### Animation engine: mojoFx
 

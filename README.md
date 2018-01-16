@@ -1,11 +1,11 @@
 MojoJS
 ======
 
-It is a javascript framework
+It's a JavaScript library implement animation and css selector.
 
 ### CSS query engine: mojoQuery
 
-mojoQuery a pure-JavaScript CSS selector engine. <br>
+mojoQuery a pure-JavaScript CSS selector engine. 
 It's a part of mojo, but also can be easily independent use it or integration to any place.
 
 #### Features

@@ -8,6 +8,6 @@ window.frameworks = [
 
     ["mojoQuery", "../mojoQuery.js", "mojoQuery"],
 
-    ["sizzle-latest", "https://raw.githubusercontent.com/jquery/sizzle/master/src/sizzle.js", "Sizzle"],
+    ["sizzle-latest", "https://raw.githubusercontent.com/jquery/sizzle/master/src/sizzle.js", "window.Sizzle"],
 
 ];

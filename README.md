@@ -14,8 +14,8 @@ The mojoQuery is a pure-JavaScript CSS selector engine. It's a part of mojo, but
 * Fully compatible standards
 * Highly extensible with easy-to-use API
 * Doc and API see mojoQuery
-* Checkout speed test with others js framework [Live speed test](http://scottcgi.github.io/MojoJS/Test/mojoQuery/speedTest/index.html "speed test")
-* [Wiki page](https://github.com/scottcgi/MojoJS/wiki/MojoQuery "wiki page")
+* Checkout speed test with others js framework [Live speed test](https://scottcgi.github.io/MojoJS/independent/mojoQuery/speedTest/index.html "speed test")
+* [MojoQuery wiki page](https://github.com/scottcgi/MojoJS/wiki/MojoQuery "wiki page")
 
 ### Animation engine: mojoFx
 
@@ -29,5 +29,5 @@ The mojoFx is a pure-JavaScript animation engine. It's a part of mojo, but also 
 * Global animation control, only one setInterval executor all animation
 * Fully compatible standard Easing effect
 * Doc and API see mojoFx
-* [Online Live demo test](http://scottcgi.github.io/MojoJS/Test/mojoFx/mojoFx-test.html "animation test")
-* [Wiki page](https://github.com/scottcgi/MojoJS/wiki/MojoFX "wiki page")
+* [Online Live demo test](https://scottcgi.github.io/MojoJS/independent//mojoFx/mojoFx-test.html "animation test")
+* [MojoFX wiki page](https://github.com/scottcgi/MojoJS/wiki/MojoFX "wiki page")

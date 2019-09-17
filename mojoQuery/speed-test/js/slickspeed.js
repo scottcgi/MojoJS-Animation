@@ -4,12 +4,10 @@ function forEach(iterable, fn, bind){
 	for (var i = 0, j = iterable.length; i < j; i++) fn.call(bind, iterable[i], i, iterable);
 };
 
-//test start
+// test start
 
 window.onload = function(){
-	
 	var frameworks = {};
-	
 	forEach(document.getElementsByTagName('iframe'), function(iframe) {
 		frameworks[iframe.name] = {
 			'test': window.frames[iframe.name].test,
@@ -17,16 +15,13 @@ window.onload = function(){
 		};
 	});
 	
-	var tbody = document.getElementById('tbody');
-	var tfoot = document.getElementById('tfoot');
-	var lastrow = tfoot.getElementsByTagName('tr')[0];
-	
+	var tbody    = document.getElementById('tbody');
+	var tfoot    = document.getElementById('tfoot');
+	var lastrow  = tfoot.getElementsByTagName('tr')[0];
 	var controls = document.getElementById('controls');
-	
-	var links = controls.getElementsByTagName('a');
-	
-	var start = links[1];
-	var stop = links[0];
+	var links    = controls.getElementsByTagName('a');
+	var start    = links[1];
+	var stop     = links[0];
 	
 	start.onclick = function(){ 
 		testRunner();
@@ -39,15 +34,17 @@ window.onload = function(){
 		return false;
 	};
 	
-	var score = [];
+	var score  = [];
 	var scores = {};
 	
 	var frxi = 0; 
 	for (var name in frameworks){
 		var framework = frameworks[name];
+
 		forEach(window.selectors, function(selector){
 			framework.selectors.push(selector);
 		});
+
 		scores[name] = lastrow.getElementsByTagName('td')[frxi];
 		score[name] = 0;
 		frxi++;
@@ -57,10 +54,11 @@ window.onload = function(){
 
 	forEach(window.selectors, function(selector, i){
 		var frxi = 0;
-		var row = tbody.getElementsByTagName('tr')[i];
+		var row  = tbody.getElementsByTagName('tr')[i];
+
 		for (var name in frameworks){
 			var framework = frameworks[name];
-			var cell = row.getElementsByTagName('td')[frxi];
+			var cell      = row.getElementsByTagName('td')[frxi];
 			tests.push({
 				'execute': framework.test,
 				'selector': framework.selectors[i],
@@ -68,6 +66,7 @@ window.onload = function(){
 				'row': row,
 				'cell' : cell
 			});
+
 			frxi++;
 		}
 	});
@@ -111,14 +110,14 @@ window.onload = function(){
 		
 		forEach(cells, function(cell, i){
 			if (!cell.error) speeds[i] = cell.speed;
-			//error, so we exclude it from colouring good. does not affect score (it should?).
+			// error, so we exclude it from colouring good. does not affect score (it should?).
 			else speeds[i] = 99999999999999999999999;
 		});
 		
 		var min = Math.min.apply(this, speeds);
 		var max = Math.max.apply(this, speeds);
 		
-		var found = [];
+		var found    = [];
 		var mismatch = false;
 		forEach(cells, function(cell, i){
 			found.push(cell.found);
@@ -140,6 +139,5 @@ window.onload = function(){
 				if (cell.found != undefined) cell.className += ' mismatch';
 			});
 		}
-		
 	};
 };

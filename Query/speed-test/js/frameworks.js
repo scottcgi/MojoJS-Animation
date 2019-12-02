@@ -6,8 +6,8 @@ window.frameworks = [
 
     ["native", "native", "document.querySelectorAll"],
 
-    ["mojoQuery", "../mojoQuery.js", "mojoQuery"],
+    ["MojoJS.query", "../MojoJS.query.js", "MojoJS.query"],
 
-    ["sizzle-2.3.5", "../sizzle.min.js", "Sizzle"],
+    ["sizzle-mini-v2.3.5", "js/sizzle.min.js", "Sizzle"],
 
 ];

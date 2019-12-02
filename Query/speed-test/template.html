@@ -1,75 +1,78 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" debug="true">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<meta http-equiv="pragma" content="no-cache" />
-	<meta http-equiv="cache-control" content="no-cache" />
-	<meta http-equiv="expires" content="0" />
-	
-	<script type="text/javascript">
-		var params = location.search.replace("?", "").split(",");
-		var head   = document.getElementsByTagName("head")[0];
-		
-		if(params[0] !== "native") {
-			document.querySelectorAll                 = null;
-      document.documentElement.querySelectorAll = null;
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="expires" content="0" />
+  
+  <script type="text/javascript">
+    var params = location.search.replace("?", "").split(",");
+    var head   = document.getElementsByTagName("head")[0];
+    
+    if(params[0] !== "native") {
+        Document.prototype.getElementsByClassName = null;
+        Document.prototype.querySelectorAll       = null;
+        Document.prototype.querySelector          = null;
+
+        document.writeln("<script id='libScript' type='text/javascript' src=" + params[0] + "></" + "script>");
+    } else {
+        // keep tag count
+        document.writeln("<script id='libScript' type='text/javascript' src=''></" + "script>");
+    }
+    
+    window.queryMethod = params[1];
+    
+    function reloadScript() {
+       if(params[0] !== "native") {
+           head.removeChild(document.getElementById("libScript"));
+  
+           var lib = document.createElement("script");
+           lib.id  = "libScript";
+           lib.src = params[0];
+           head.appendChild(lib);
+       }
+    }
+  </script>	
+  
+  <script type="text/javascript">
+    var getLength = function(elements){
+        return (typeof elements.length == 'function') ? elements.length() : elements.length;
+    }
+    
+    function test(selector){ 
+        var queryMethod;
+        
+        if (typeof selector !== "string") {
+            // with context
+            queryMethod = window.queryMethod + "('" + selector[0] + "','" + selector[1] + "')";
+        } else {
+            queryMethod = window.queryMethod + "('" + selector + "')";
+        }
       
-			document.writeln("<script id='libScript' type='text/javascript' src=" + params[0] + "></" + "script>");
-		} 
-		
-		window.queryMethod = params[1];
-		
-		function reloadScript() {
-			if(params[0] !== "native") {
-				document.querySelectorAll                 = null;
-				document.documentElement.querySelectorAll = null;					
-				
-				head.removeChild(document.getElementById("libScript"));
-
-				var lib = document.createElement("script");
-				lib.id  = "libScript";
-				lib.src = params[0];
-				head.appendChild(lib);
-			}
-		}
-		
-	</script>	
-	
-	<script type="text/javascript">
-		var get_length = function(elements){
-			return (typeof elements.length == 'function') ? elements.length() : elements.length;
-		}
-		
-		function test(selector){ 
-			var queryMethod;
-			
-			if (typeof selector !== "string") {
-				// with context
-				queryMethod = window.queryMethod + "('" + selector[0] + "','" + selector[1] + "')";
-			} else {
-				queryMethod = window.queryMethod + "('" + selector + "')";
-			}
-		
-			try {
-				var start = new Date().getTime();
-				var elements = eval(queryMethod);
-
-				for(var i = 0; i < 9; i++) {
-					eval(queryMethod);
-				}
-
-				var end = new Date().getTime() - start;
-				
-				return {'time': Math.round(end), 'found': get_length(elements)};
-			} catch(err){
-				if (elements == undefined) elements = {length: -1};
-				return ({'time': new Date().getTime() - start, 'found': get_length(elements), 'error': err});
-			}
-		}
-	</script>	
+        try {
+            var start    = new Date().getTime();
+            var elements = eval(queryMethod);
+  
+            // for(var i = 0; i < 9; i++) {
+               eval(queryMethod);
+            // }
+  
+            var end = new Date().getTime() - start;
+          
+            return {'time': Math.round(end), 'found': getLength(elements)};
+        } catch(err) {
+            if (elements === undefined) {
+                elements = {length: -1};
+            }
+  
+            return ({'time': new Date().getTime() - start, 'found': getLength(elements), 'error': err});
+        }
+    }
+  </script>	
 </head>
 
 
@@ -92,9 +95,9 @@
 
 
 <!-- 
-	no need to look   
-	The following page is copy of 'http://www.w3.org/TR/css3-selectors/'
-	You can change it by yourself
+  no need to look   
+  The following page is copy of 'http://www.w3.org/TR/css3-selectors/'
+  You can change it by yourself
 -->
 
 
@@ -103,10 +106,12 @@
 
 <body class="toc-sidebar" huaban_collector_injected="true"><p id="toc-nav"><a id="toc-jump" href="#toc"><span aria-hidden="true">↑</span> <span>Jump to Table of Contents</span></a><a id="toc-toggle" href="#toc"><span aria-hidden="true">←</span> <span>Collapse Sidebar</span></a></p>
   <div class="head"> <!--begin-logo-->
-   <p><a href="https://www.w3.org/"><img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"></a>
+   <p><a href="https://www.w3.org/"><img alt="W3C" height="48" src="" width="72"></a>
     <!--end-logo-->
 
    </p><h1 id="title"><div id="annotation_root_" class="annotation first closed" data-testcount="79" data-needcount="0"><div class="disclosure button" onclick="annotator.toggleAnnotations()"></div><div class="close button" onclick="annotator.removeAllAnnotations()"></div><div class="heading"><a href="https://test.csswg.org/harness/test/selectors-3_dev/">79 Tests</a></div></div>Selectors Level 3</h1>
+
+   <h2 id="title"></h2>
 
    <h2 class="no-num no-toc">W3C Recommendation 06 November 2018</h2>
 
@@ -2448,7 +2453,7 @@ paragraph.&lt;/P&gt;
    classes), that precedes or follows the first letter should be included. <a href="#ref-UNICODE">[UNICODE]<!--{{!UNICODE}}--></a>
 
   </p><div class="figure">
-   <p><img alt="Quotes that precede the first letter should be included." src="first-letter2.gif">
+   <p><img alt="Quotes that precede the first letter should be included." src="">
   </p></div>
 
   <p>The <a href="#first-letter0"><code>::first-letter</code></a> also
@@ -2601,7 +2606,7 @@ En dagelix geschrey de bange stad ontzet.
 </pre>
 
    <div class="figure">
-    <p><img alt="Image illustrating the ::first-letter pseudo-element" src="initial-cap.png">
+    <p><img alt="Image illustrating the ::first-letter pseudo-element" src="">
    </p></div>
   </div>
 
@@ -2629,7 +2634,7 @@ En dagelix geschrey de bange stad ontzet.
    <p>This example might be formatted as follows:
 
    </p><div class="figure">
-    <p><img alt="Image illustrating the combined effect of the ::first-letter and ::first-line pseudo-elements" src="first-letter.gif">
+    <p><img alt="Image illustrating the combined effect of the ::first-letter and ::first-line pseudo-elements" src="">
    </p></div>
 
    <p>The <span class="index-inst" id="fictional-tag-sequence0" title="fictional tag sequence">fictional tag sequence</span> is:
@@ -3388,11 +3393,6 @@ V         v|\\0{0,4}(58|78)(\r\n|[ \t\r\n\f])?|\\v
   </li></ul>
 
   <p role="navigation" id="back-to-top"><a href="#toc"><abbr title="Back to top">↑</abbr></a></p>
-  <script src="//www.w3.org/scripts/TR/2016/fixup.js" type="application/javascript"></script>
 </body>
-
-
-
-
 
 </html>

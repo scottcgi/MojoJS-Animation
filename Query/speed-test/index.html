@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>CSS Selector Test</title>
+    
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+    
+    <script src="js/selectors.js"  type="text/javascript"></script>
+    <script src="js/frameworks.js" type="text/javascript"></script>
+    <script src="js/slickspeed.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div id="container">
+
+    <!-- header -->
+    <h1><span>SlickSpeed</span></h1>
+    <h2>speed/validity selectors test for frameworks.</h2>
+    
+    <div id="controls">
+        <a class="stop"  href="#">Stop  tests</a>
+        <a class="start" href="#">Start tests</a>
+    </div>
+    <!-- header end -->
+    
+<div style="margin:10px">
+    <p>
+        Selector Type : 
+        <select onchange="selectorTypeChange(this)" id="selectorType">
+            <option selected="selected" value="relativeSelectors">Relative</option>
+            <option value="clsSelectors">Class</option>
+            <option value="attrSelectors">Attribute</option>
+            <option value="pseuSelectors">Pseudo</option>
+            <option value="extraSelectors">Extra</option>
+            <option value="allSelectors">All</option>
+            <option value="crazySelectors">Crazy</option>
+            <option value="customSelectors">Custom</option>
+        </select>
+        <input type="button" value="clear" onclick="clearSelector()" />
+    </p>
+    <p id="customSelector" style="display:none;">
+        Custom Selector :
+        <input type="text" value="" id="customText" style="width: 400px"/>
+        <input type="button" value="add" onclick="addSelector()" />
+        <input type="button" value="removeAll" onclick="removeAll()" />
+    </p>
+</div>
+        
+
+<div id="tableDiv">
+    
+</div>
+
+<h2>Legend</h2>
+
+<table id="legend">
+
+    <tr>
+        <th>the faster</th>
+        <th>the slower</th>
+        <th>exception thrown or zero elements found</th>
+        <th>different returned elements</th>
+    </tr>
+
+    <tr>
+        <td class="good">&nbsp;</td>
+        <td class="bad">&nbsp;</td>
+        <td class="exception">&nbsp;</td>
+        <td class="mismatch">&nbsp;</td>
+    </tr>
+
+</table>
+
+<div id="footer">
+    
+    <h3>Notes:</h3>
+    <ul>
+        <li> Every framework runs in his own iFrame, thus no conflicts can happen. </li>
+        <li> Tests are run selector by selector, with an interval to prevent the browser from freeezing.</li>
+        <li> Tests are run in a neutral environment, no library or framework is included in the main javascript test, to avoid favoritism.</li>
+        <li> The test page is copy of <a target="_blank" href="http://www.w3.org/TR/css3-selectors/">here<a/>.</li>
+    </ul>
+    <br/>	
+    <p class="footer">
+        copyright &copy; 2007 <a href="http://mootools.net">http://mootools.net</a> | MIT License</a>
+    </p>
+</div>
+
+</div>
+</body>
+
+    <!--
+        add test framework in frameworks.js
+    -->
+    <script type="text/javascript">
+        // rewrite array toString method for context selector
+        Array.prototype.toString = function() {
+            return this.join(" | ");
+        }
+        
+        var 
+            tableDiv = document.getElementById("tableDiv"),
+            ths      = "", tds = "", trs = "",
+            table    = "<table>",
+            tbody    = "<tbody id='tbody'>",
+            thead    = "<thead id='thead'><tr><th class='selectors-title'>selectors</th>",
+            tfoot    = "<tfoot id='tfoot'><tr><th class='score-title'><strong>final time (less is better)</strong></th>";
+        
+        // build head,foot,iframe	
+        for (var i = 0, len = frameworks.length; i < len; i++) {
+            thead += "<th class='framework'>" + frameworks[i][0] + "</th>";
+            tds   += "<td class='empty'></td>";
+            tfoot += "<td class='score'>0</td>";
+            
+            // iframe src = "template.html?[fileName],[css query method]"
+            document.writeln(
+                "<iframe name='" + 
+                frameworks[i][0] + "' src='template.html?" + 
+                frameworks[i][1] + "," + 
+                frameworks[i][2] + 
+                "'></iframe>"
+            );
+        }	
+        thead += "</tr></tfoot>";
+        tfoot += "</tr></tfoot>";
+
+        // build body
+        for (var i = 0, len = selectors.length; i < len; i++) {
+            trs += "<tr><th class='selector'>" + selectors[i] + "</th>" + tds + "</tr>";
+        }	
+
+        
+        var 
+            table_thead_tbody = table     + thead + tbody,
+            tbody_tfoot_table = "</body>" + tfoot + "</table>";
+        
+        tableDiv.innerHTML = table_thead_tbody + trs + tbody_tfoot_table;
+        
+        // switch selector
+        function selectorTypeChange(ths) {
+            if(ths.value === "customSelectors") {
+                document.getElementById("customSelector").style.display = "block";
+            } else {
+                document.getElementById("customSelector").style.display = "none";
+            }
+            
+            var arr = window[ths.value];
+            fillTableData(arr);
+            window.selectors = arr;
+            window.onload();
+        }
+        
+        // fill selector
+        function fillTableData(selectorArr) {
+            if (!selectorArr.cacheSelectors) {
+                var trs = "";
+                for (var i = 0, len = selectorArr.length; i < len; i++) {
+                    trs += "<tr><th class='selector'>" + selectorArr[i] + "</th>" + tds + "</tr>";
+                }
+                selectorArr.cacheSelectors = trs;
+            }
+
+            tableDiv.innerHTML = table_thead_tbody + selectorArr.cacheSelectors + tbody_tfoot_table;			
+        }
+
+        function addSelector() {
+            var selector = document.getElementById('customText').value;
+            var custom   = window.customSelectors;
+            custom.push(selector); 
+            custom.cacheSelectors = null;
+            fillTableData(custom);
+            window.selectors      = custom;
+            window.onload();			
+        }
+        
+        // remove all test selector
+        function removeAll() {
+            var custom            = window.customSelectors;
+            custom.length         = 0;
+            custom.cacheSelectors = null;
+            fillTableData([]);			
+        }
+
+        function clearSelector() {
+            document.getElementById("selectorType").onchange();
+        }
+    </script>
+    
+</html>

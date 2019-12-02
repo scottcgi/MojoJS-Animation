@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>MojoJS | animation.js</title>
+        
+        <script type="text/javascript" src="./MojoJS.animation.js"></script>
+        
+        <style>
+
+        html, body {
+            background-color: #252423;
+        }
+            
+        body {
+            font: 12px "PingFang SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 400;
+        }	
+
+        label {
+            border-radius: 5px;
+            padding: 0px 5px 0px 5px;
+            border: 1px solid;
+            color:#ffffff;
+            text-align:center;
+            width: 85px;
+            display: block;
+            background-color: #795548;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration:underline;
+        }
+           
+        div.header {
+            background-color: #0D3349;
+            color: #ffffff;
+            border-radius: 10px;
+            text-align:center;
+            padding: 1px;
+            border: 1px solid;
+            border-color:#ffffff26;
+        }
+
+        div.header a {
+            transform: rotateX(25deg);
+            margin: 5px;
+            display: block;
+            font-size: 20px;
+        }
+
+        div.body {
+            position:relative;
+            margin: 50px 0 0 50px;
+        }
+
+        div.demo {
+            margin-bottom: 150px;
+        }
+        
+        div.target {
+            border: 20px solid;
+            border-color: #FF9933 #339999 #CC3399 #999900;
+            width: 0;
+            height:0;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            margin-top: 40px;
+            position: absolute;
+            color:transparent;
+        }
+        </style>
+    </head>
+    
+    <body>
+        <div class="header">
+           <a target="_blank" href="https://github.com/scottcgi/MojoJS">MojoJS Animation v2.0.0</a>
+        </div>
+
+        <div class="body">
+            <div class="demo">
+                <div class="target" id="target0" onclick="doTarget(this)"></div>
+                <label>Position</label>
+            </div>
+
+            <div class="demo">
+                <div class="target" id="target1" onclick="doTarget(this)"></div>
+                <label>Size</label>
+           </div>
+
+           <div class="demo">
+               <div class="target" id="target2" onclick="doTarget(this)"></div>
+               <label>Color</label>
+           </div>           
+
+           <div class="demo">
+               <div class="target" id="target3" onclick="doTarget(this)"></div>
+               <label>Transform</label>
+          </div>             
+
+          <div class="demo">
+              <div class="target" id="target4" onclick="doTarget(this)"></div>
+              <label>Animation</label>
+          </div>            
+        </div>
+    </body>
+    
+    <script type="text/javascript">
+
+        function doTarget(el) {
+            var anim = MojoJS.createAnimation(el);
+            var id   = el.id.match(/\d+/)[0] * 1;
+
+            switch(id) {
+                case 0:
+                    anim.animate({left: 0, top: 0},              0, {id:       "reset"})
+                        .animate({left: 500      }, false,    1000, {appendTo: "reset"})
+                        .animate({top: "-=40"    }, "linear",  100)
+                        .animate({top: "+=40"    }, "linear",  100)
+                        .animate({top: "-=40"    }, "linear",  150)
+                        .animate({top: "+=40"    }, "linear",  150)
+                        .animate({top: "-=10"    }, "linear",  100)
+                        .animate({top: "+=10"    }, "linear",  100)
+                        .animate({left: 0, top: 0}, "backInElasticOut", 600, {delay: 500});
+                    break;
+
+                case 1:
+                    anim.animate({left:       -40,                                        }, 300, "backIn",  false)
+                        .animate({borderWidth:  1, height: "4em",  width: "4em"           }, 100)
+                        .animate({borderWidth: 20, height: "0px",  width: "0px"           }, 600, "bounceOut")
+                        .animate({borderWidth:  1, height: "4em",  width: "4em", left: 500}, 500)
+                        .animate({borderWidth: 20, height:     0,  width:     0, left:   0}, 800, "exponentialOut", {delay: 200});
+                    break;
+
+                case 2:
+                    anim.animate({left: 500, borderRadius: 50}, 1000)
+                        .animate({left:   0, borderRadius:  5}, 1000, {delay: 200})
+
+                    // start a new animation    
+                    MojoJS.createAnimation(el)    
+                        .animate({width: "50px", height: "50px"}, 200)
+                        .animate({
+                            backgroundColor:  "#000",
+                            borderTopColor:   "#000",
+                            borderRightColor: "#000",
+                            borderLeftColor:  "#000",
+                            borderBottomColor:"#000",
+                        }, 400, "linear")		
+                        .animate({backgroundColor:  "rgb(63, 81, 181, 0)"}, 500)	
+                        .animate({width: 0,         height: 0            }, 200)			
+                        .animate({borderBottomColor:"#CC3399"            }, 200)
+                        .animate({borderLeftColor:  "#999900"            }, 200)
+                        .animate({borderTopColor:   "#FF9933"            }, 200)
+                        .animate({borderRightColor: "#339999"            }, 200)	
+                    break;
+
+                case 3:
+                    anim.animate({translateX: 100,     rotateX: 360})
+                        .animate({translateX: 200,     rotateY: 360})
+                        .animate({translateX: 300,     rotateZ: 360})
+                        .animate({translateX: "+=100", skewX:   40}, "backOut")
+                        .animate({translateX: "+=100", skewY:   40}, "backOut")
+                        .animate({
+                            translateX: 0, 
+                            rotateY:    0,
+                            rotateX:    0,
+                            rotateZ:    0,
+                            skewY:      0,
+                            skewX:      0,   
+                        }, 1000)
+                    ;
+                    break;
+            }
+        }
+    </script>
+</html>

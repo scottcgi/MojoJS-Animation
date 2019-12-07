@@ -4,7 +4,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>MojoJS | animation.js</title>
         
-        <script type="text/javascript" src="./MojoJS.animation.js"></script>
+        <script type="text/javascript" src="../MojoJS.animation.js"></script>
+        <script src="./prism.js"></script>
+        <link href="./prism.css" rel="stylesheet" />
         
         <style>
 
@@ -54,6 +56,12 @@
             font-size: 20px;
         }
 
+        div.header p {
+            font-size: 5px;
+            padding:0;
+            margin: 0;
+        }
+
         div.body {
             position:relative;
             margin: 50px 0 0 50px;
@@ -75,18 +83,41 @@
             position: absolute;
             color:transparent;
         }
+
+        div pre {
+            position: absolute;
+            right: 0;
+            border-radius: 15px;
+        }
         </style>
     </head>
     
     <body>
         <div class="header">
-           <a target="_blank" href="https://github.com/scottcgi/MojoJS">MojoJS Animation v2.0.0</a>
+            <a target="_blank" href="https://github.com/scottcgi/MojoJS">
+                MojoJS animation v2.0.0
+                <p>hosted on github</p>
+            </a>
         </div>
 
         <div class="body">
             <div class="demo">
                 <div class="target" id="target0" onclick="doTarget(this)"></div>
                 <label>Position</label>
+                <pre id="code0">
+                    <code class="lang-javascript">
+MojoJS.createAnimation("target")
+      .animate({left: 0, top: 0},              0, {id:       "reset"})
+      .animate({left: 500      }, false,    1000, {appendTo: "reset"})
+      .animate({top: "-=40"    }, "linear",  100)
+      .animate({top: "+=40"    }, "linear",  100)
+      .animate({top: "-=40"    }, "linear",  150)
+      .animate({top: "+=40"    }, "linear",  150)
+      .animate({top: "-=10"    }, "linear",  100)
+      .animate({top: "+=10"    }, "linear",  100)
+      .animate({left: 0, top: 0}, "backInElasticOut", 600, {delay: 500});
+                    </code>
+                </pre>                
             </div>
 
             <div class="demo">

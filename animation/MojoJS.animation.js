@@ -492,7 +492,7 @@
                             
                             if (config.complete !== null) {
                                 // do action callback
-                                config.complete.apply(config.anim, config.args);
+                                config.complete.apply(anim, config.args);
                             }
     
                             // find append configs

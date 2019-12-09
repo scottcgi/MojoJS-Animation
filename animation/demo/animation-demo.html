@@ -21,11 +21,11 @@
 
         label {
             border-radius: 5px;
-            padding: 0px 5px 0px 5px;
+            padding: 3px 5px 3px 5px;
             border: 1px solid;
             color:#ffffff;
             text-align:center;
-            width: 200px;
+            width: 180px;
             display: block;
             background-color: #795548;
             cursor: pointer;
@@ -33,7 +33,7 @@
 
         pre.target-pre {
             border-radius: 10px;
-            margin-top: 140px;
+            margin-top: 120px;
             padding: 0 0 0 0;
             overflow: hidden;
         }
@@ -82,7 +82,7 @@
         }
 
         div.demo {
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
         
         div.target {
@@ -116,7 +116,7 @@
                 
                 <pre id="pre0" class="target-pre" style="height: 0;">
                 <code id="code0" class="lang-javascript">
-    MojoJS.createAnimation("target")
+    MojoJS.createAnimation("#target")
           .animate({left: 0, top: 0},                       0, {id      : "reset"})
           .animate({left: 500      }, false,             1000, {appendTo: "reset"})
           .animate({top: "-=40"    }, "linear",           100)
@@ -136,24 +136,23 @@
 
                 <pre id="pre1" class="target-pre" style="height: 0;">
                 <code id="code1" class="lang-javascript">
-    MojoJS.createAnimation("target")
+    MojoJS.createAnimation("#target")
           .animate({left:       -40,                                        }, 300, "backIn",  false)
           .animate({borderWidth:  1, height: "4em",  width: "4em"           }, 100)
           .animate({borderWidth: 20, height: "0px",  width: "0px"           }, 600, "bounceOut")
           .animate({borderWidth:  1, height: "4em",  width: "4em", left: 500}, 500)
           .animate({borderWidth: 20, height:     0,  width:     0, left:   0}, 800, "exponentialOut", {delay: 200});</code>
                 </pre>                  
+            </div>
 
-           </div>
 
+            <div class="demo">
+                <div class="target" id="target2" onclick="doTarget(this)"></div>
+                <label onclick="showCode(2)">Color - show code</label>
 
-           <div class="demo">
-               <div class="target" id="target2" onclick="doTarget(this)"></div>
-               <label onclick="showCode(2)">Color - show code</label>
-
-               <pre id="pre2" class="target-pre" style="height: 0;">
-               <code id="code2" class="lang-javascript">
-    MojoJS.createAnimation("target")
+                <pre id="pre2" class="target-pre" style="height: 0;">
+                <code id="code2" class="lang-javascript">
+    MojoJS.createAnimation("#target")
           .animate({left: 0, top: 0},                       0, {id      : "reset"})
           .animate({left: 500      }, false,             1000, {appendTo: "reset"})
           .animate({top: "-=40"    }, "linear",           100)
@@ -163,17 +162,17 @@
           .animate({top: "-=10"    }, "linear",           100)
           .animate({top: "+=10"    }, "linear",           100)
           .animate({left: 0, top: 0}, "backInElasticOut", 600, {delay   : 500});</code>
-               </pre>                 
+                </pre>                 
                
-           </div>           
+            </div>           
 
-           <div class="demo">
-               <div class="target" id="target3" onclick="doTarget(this)"></div>
-               <label onclick="showCode(3)">Transform - show code</label>
+            <div class="demo">
+                <div class="target" id="target3" onclick="doTarget(this)"></div>
+                <label onclick="showCode(3)">Transform - show code</label>
 
-               <pre id="pre3" class="target-pre" style="height: 0;">
-               <code id="code3" class="lang-javascript">
-    MojoJS.createAnimation("target")
+                <pre id="pre3" class="target-pre" style="height: 0;">
+                <code id="code3" class="lang-javascript">
+    MojoJS.createAnimation("#target")
           .animate({left: 0, top: 0},                       0, {id      : "reset"})
           .animate({left: 500      }, false,             1000, {appendTo: "reset"})
           .animate({top: "-=40"    }, "linear",           100)
@@ -183,30 +182,100 @@
           .animate({top: "-=10"    }, "linear",           100)
           .animate({top: "+=10"    }, "linear",           100)
           .animate({left: 0, top: 0}, "backInElasticOut", 600, {delay   : 500});</code>
-               </pre>                  
+                </pre>                  
                
-          </div>        
+            </div>        
                
 
-          <div class="demo">
-              <div class="target" id="target4" onclick="doTarget(this)"></div>
-              <label onclick="showCode(4)">Queue - show code</label>
+            <div class="demo">
+                <div class="target" id="target4" onclick="doTarget(this)"></div>
+                <label onclick="showCode(4)">Queue - show code</label>
 
-              <pre id="pre4" class="target-pre" style="height: 0;">
-              <code id="code4" class="lang-javascript">
-    MojoJS.createAnimation("target")
-            .animate({left: 0, top: 0},                       0, {id      : "reset"})
-            .animate({left: 500      }, false,             1000, {appendTo: "reset"})
-            .animate({top: "-=40"    }, "linear",           100)
-            .animate({top: "+=40"    }, "linear",           100)
-            .animate({top: "-=40"    }, "linear",           150)
-            .animate({top: "+=40"    }, "linear",           150)
-            .animate({top: "-=10"    }, "linear",           100)
-            .animate({top: "+=10"    }, "linear",           100)
-            .animate({left: 0, top: 0}, "backInElasticOut", 600, {delay   : 500});</code>
-              </pre> 
+                <pre id="pre4" class="target-pre" style="height: 0;">
+                <code id="code4" class="lang-javascript">
+    MojoJS.createAnimation("#target")
+          .animate({translateX: "+=150"}, "bounceOut")
+          .animate({translateY: "+=50" }, "bounceOut")
+          .animate({translateX: "-=150"}, "bounceOut")
+          .animate({translateY: "-=50" }, "bounceOut");</code>
+                </pre> 
 
-          </div>            
+            </div>    
+          
+            <div class="demo">
+                <div class="target" id="target52"></div>
+                <div class="target" id="target51"></div>
+                <div class="target" id="target50"></div>
+                <div class="target" id="target5"  onclick="doTarget(this)"></div>
+
+                <label onclick="showCode(5)">Delay - show code</label>
+
+                <pre id="pre5" class="target-pre" style="height: 0;">
+                <code id="code5" class="lang-javascript">    
+    MojoJS.createAnimation("#target0")
+          .animate({translateX: "+=500"}, 500)
+          .animate({translateY: "+=50" }, 250)
+          .animate({translateX: "-=500"}, 500)
+          .animate({translateY: "-=50" }, 250);
+
+    MojoJS.createAnimation("#target1")
+          .animate({translateX: "+=500"}, 500, {delay: 150})
+          .animate({translateY: "+=50" }, 250)
+          .animate({translateX: "-=500"}, 500)
+          .animate({translateY: "-=50" }, 250);
+
+    MojoJS.createAnimation("#target2")
+          .animate({translateX: "+=500"}, 500, {delay: 300})
+          .animate({translateY: "+=50" }, 250)
+          .animate({translateX: "-=500"}, 500)
+          .animate({translateY: "-=50" }, 250);
+
+    MojoJS.createAnimation("#target3")
+          .animate({translateX: "+=500"}, 500, {delay: 450})
+          .animate({translateY: "+=50" }, 250)
+          .animate({translateX: "-=500"}, 500)
+          .animate({translateY: "-=50" }, 250);</code>    
+                </pre> 
+
+            </div>   
+
+            <div class="demo">
+                <div class="target" id="target6" onclick="doTarget(this)"></div>
+                <div class="target" id="target60" style="left: 50px;"></div>
+                <div class="target" id="target61" style="left: 100px;"></div>
+                <div class="target" id="target62" style="left: 150px;"></div>
+  
+                <label onclick="showCode(6)">Group - show code</label>
+  
+                <pre id="pre6" class="target-pre" style="height: 0;">
+                <code id="code6" class="lang-javascript">            
+    MojoJS.createAnimation("#target0, #target1, #target2, #target3")
+          .animate({translateY: "+=50"}, 500)
+          .animate({translateY: "-=50"}, 500)
+          .animate({translateY: "+=30"}, 400)
+          .animate({translateY: "-=30"}, 400)
+          .animate({translateY: "+=15"}, 300)
+          .animate({translateY: "-=15"}, 300)</code>    
+                </pre> 
+  
+            </div>  
+
+            <div class="demo">
+                    <div class="target" id="target7" onclick="doTarget(this)"></div>
+                    <label onclick="showCode(7)">Complete - show code</label>
+      
+                    <pre id="pre7" class="target-pre" style="height: 0;">
+                    <code id="code7" class="lang-javascript">            
+        MojoJS.createAnimation("#target)
+              .animate({left: "+=400"}, function() {
+                  this.animate({rotate:   "+=180", top   :  "+=50"}, function() {
+                      this.animate({left: "-=400"                 }, {id      : "back"});
+                      this.animate({top :  "-=50", rotate: "+=180"}, {appendTo: "back"});
+                  });
+              });</code>    
+                    </pre> 
+      
+                </div>              
         </div>
     </body>
     
@@ -282,13 +351,57 @@
                         .animate({translateX: "-=150"}, "bounceOut")
                         .animate({translateY: "-=50" }, "bounceOut")
                     break;
+
+                case 5:
+                    anim  .animate({translateX: "+=500"}, 500)
+                          .animate({translateY: "+=50" }, 250)
+                          .animate({translateX: "-=500"}, 500)
+                          .animate({translateY: "-=50" }, 250);
+
+                    MojoJS.createAnimation("#target50")
+                          .animate({translateX: "+=500"}, 500, {delay: 150})
+                          .animate({translateY: "+=50" }, 250)
+                          .animate({translateX: "-=500"}, 500)
+                          .animate({translateY: "-=50" }, 250);
+
+                    MojoJS.createAnimation("#target51")
+                          .animate({translateX: "+=500"}, 500, {delay: 300})
+                          .animate({translateY: "+=50" }, 250)
+                          .animate({translateX: "-=500"}, 500)
+                          .animate({translateY: "-=50" }, 250);
+
+                    MojoJS.createAnimation("#target52")
+                          .animate({translateX: "+=500"}, 500, {delay: 450})
+                          .animate({translateY: "+=50" }, 250)
+                          .animate({translateX: "-=500"}, 500)
+                          .animate({translateY: "-=50" }, 250);
+                    break;
+
+                case 6:
+                    MojoJS.createAnimation("#target6, #target60, #target61, #target62")
+                          .animate({translateY: "+=50"}, 500)
+                          .animate({translateY: "-=50"}, 500)
+                          .animate({translateY: "+=30"}, 400)
+                          .animate({translateY: "-=30"}, 400)
+                          .animate({translateY: "+=15"}, 300)
+                          .animate({translateY: "-=15"}, 300);
+                    break;
+
+                case 7:
+                    anim.animate({left: "+=400"}, function() {
+                        this.animate({rotate:   "+=180", top   :  "+=50"}, function() {
+                            this.animate({left: "-=400"                 }, {id      : "back"});
+                            this.animate({top :  "-=50", rotate: "+=180"}, {appendTo: "back"});
+                        });
+                    });
+                    break;
                 
             }
         }
 
 
         function showCode(id) {
-            var pre  = document.getElementById("pre" + id);
+            var pre  = document.getElementById("pre"  + id);
             var code = document.getElementById("code" + id);
             var h;
 
@@ -300,8 +413,8 @@
                 MojoJS.createAnimation(pre) .animate({height: h})
                 MojoJS.createAnimation(code).animate({top: 0})
             } else {
-                MojoJS.createAnimation(code).animate({top   : -parseInt(pre.style.height)})
-                MojoJS.createAnimation(pre) .animate({height: 0}, "cubicOut")
+                MojoJS.createAnimation(code).animate({top   : -parseInt(pre.style.height)}, 200)
+                MojoJS.createAnimation(pre) .animate({height: 0}, 200)
             }
         }
     </script>

@@ -1,33 +1,51 @@
 MojoJS
 ======
 
-It's a JavaScript library implement animation and css selector.
+It's a JavaScript library that includes **Animation Engine** and **CSS Selector Engine**.
 
-### CSS query engine: mojoQuery
+### Animation Engine
 
-The mojoQuery is a pure-JavaScript CSS selector engine. It's a part of mojo, but also can be easily independent use it or integration to any place.
+The [MojoJS.animation](https://github.com/scottcgi/MojoJS/blob/master/animation/MojoJS.animation.js) is a very **lightweight** and **powerful** JS animation library. It also has very **simple**, **beautiful**, **easy-to-understand** source code and **"Make-You-Happy"** API.
 
-#### Features
-
-* Completely standalone (no library dependencies)
-* CSS 3 Selector full support and more
-* Fully compatible standards
-* Highly extensible with easy-to-use API
-* Doc and API see mojoQuery
-* Checkout speed test with others js framework [Live speed test](https://scottcgi.github.io/MojoJS/independent/mojoQuery/speedTest/index.html "speed test")
-* [MojoQuery wiki page](https://github.com/scottcgi/MojoJS/wiki/MojoQuery "wiki page")
-
-### Animation engine: mojoFx
-
-The mojoFx is a pure-JavaScript animation engine. It's a part of mojo, but also can be easily independent use it or integration to any place.
+The [Online Demo](https://scottcgi.github.io/MojoJS/animation/demo/animation-demo.html) shows the effect and code usage.
 
 #### Features
 
-* Support all css animation include color property
-* Support queue and concurrent animation
-* Support delay queue animation function
-* Global animation control, only one setInterval executor all animation
-* Fully compatible standard Easing effect
-* Doc and API see mojoFx
-* [Online Live demo test](https://scottcgi.github.io/MojoJS/independent//mojoFx/mojoFx-test.html "animation test")
-* [MojoFX wiki page](https://github.com/scottcgi/MojoJS/wiki/MojoFX "wiki page")
+* Support CSS and Transform properties animation.
+* Support queue and concurrent animation.
+* Support a group of elements animation.
+* Support delay animation.
+* Support complete callback on animate (not on element).
+* Support configurable chained complete callbacks.
+* Support fully compatible standard easing effect.
+* Creative default configuration API.
+
+```js
+/**
+ * Create animation object.
+ *
+ * @param {String (selector) | Array<HTMLElement> | NodeList | HTMLElement} targets
+ */
+ MojoJS.createAnimation(targets)
+ 
+ 
+/**
+ * Animate with config.
+ * 
+ * @param  {Object} animStyle 
+ * @return {Object} animation
+ */
+ animation.animate(animStyle, params);
+```
+
+
+### CSS Selector Engine
+
+
+#### Features
+
+* Support CSS 3 Selector full and more.
+
+
+
+

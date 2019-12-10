@@ -32,14 +32,14 @@ The [Online Demo](https://scottcgi.github.io/MojoJS/animation/demo/animation-dem
 /**
  * Animate with config.
  *
- * the params is optional and no order limit, they can be:
+ * the variable params is optional and no order limit, they can be:
  * 
  * duration (Number)  : animation time.
  * isQueue  (Boolean) : inqueue or concurrent.                       
  * complete (Function): complete callback.                       
  * args     (Array)   : complete function args.
  * easing   (String)  : easing function name.
- * config   (Object)  : params in object and three more settings:
+ * config   (Object)  : variable params in object and three more settings:
  *   {
  *       id       (String) : the animation id.
  *       appendTo (String) : callback when animation of this id is completed.
@@ -49,14 +49,95 @@ The [Online Demo](https://scottcgi.github.io/MojoJS/animation/demo/animation-dem
  * @param  {Object} animStyle 
  * @return {Object} animation
  */
- animation.animate(animStyle, params[duration, isQueue, complete, args, easing, config]);
-```
+ animation.animate(animStyle[, duration, isQueue, complete, args, easing, config]);
 
+
+/**
+ * The animation complete callback function.
+ *
+ * args    (Array)     : apply from [config.args].
+ * thisArg (Animation) : apply from current animation.
+ */
+ function completeCallback([arg0, arg1, ...]);
+ 
+```
 
 ### CSS Selector Engine
 
+The [MojoJS.query](https://github.com/scottcgi/MojoJS/blob/master/query/MojoJS.query.js) is a pure JS **CSS Selector Engine**. 
 
-#### Features
+It not only supports **full CSS3 Selectors** and more and easy to extend, but also has very **simple**, **beautiful**, **easy-to-understand** code structure and implementation ideas.
 
-* Support CSS 3 Selector full and more.
+The [Online Speed-Test](https://scottcgi.github.io/MojoJS/query/speed-test/index.html) shows the support selectors and speed comparison with native query.
+
+```js
+/**
+ * Select HTMLElements by css seletor and context.
+ * 
+ * @param  {String}                                                          selector
+ * @param  {String (selector) | HTMLElement | Array<HTMLElement> | NodeList} context (optional)
+ * @return {Array<HTMLElement>}                                              HTMLElements Array
+ */
+ MojoJS.query(selector, context);
+```
+
+### Support CSS Selectors
+
+```css
+*
+#myid
+E
+E.warning
+E F
+E > F
+E + F
+E ~ F
+
+E[foo]  
+E[foo="bar"]    
+E[foo~="bar"]   
+E[foo^="bar"]   
+E[foo$="bar"]   
+E[foo*="bar"]   
+E[foo|="en"]
+
+E:checked
+E:disabled
+E:enabled
+E:empty
+
+E:only-child
+E:last-child
+E:first-child
+E:first-of-type
+E:last-of-type
+E:only-of-type
+
+E:not(s)
+E:nth-child(n)
+E:nth-last-child(n)
+E:nth-of-type(n)
+E:nth-last-of-type(n)
+
+// Extra
+
+:not(E)
+:not(E.cls)
+:not(:not(E,F))
+
+:has(E)
+:has(E.cls)
+:has(:not(E,F))
+:has(E > F)
+
+[NAME!=VALUE]
+:contains(TEXT)
+:selected
+
+:first
+:last
+:even
+:odd
+:nth
+```
 

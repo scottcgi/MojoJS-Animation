@@ -81,7 +81,7 @@ The [Online Speed-Test](https://scottcgi.github.io/MojoJS/query/speed-test/index
  MojoJS.query(selector, context);
 ```
 
-### Support CSS Selectors
+#### Support CSS Selectors
 
 ```css
 *
@@ -143,4 +143,4 @@ E:nth-last-of-type(n)
 
 ## Support
 
-I hope if you are enjoying my work and the source code is useful for you, maybe you could buy me a coffee via [Paypal-0.99](https://www.paypal.me/PayScottcgi/0.99). :coffee: :kissing_heart:
+I hope if you are **enjoying** my work and the source code is **useful** for you, :coffee: maybe you could buy me a coffee via [[Paypal-0.99]](https://www.paypal.me/PayScottcgi/0.99):kissing_heart:~

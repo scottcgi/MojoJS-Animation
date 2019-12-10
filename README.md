@@ -1,7 +1,7 @@
 MojoJS
 ======
 
-It's a JavaScript library that includes **Animation Engine** and **CSS Selector Engine**.
+It is a JavaScript library that includes **Animation Engine** and **CSS Selector Engine**.
 
 ### Animation Engine
 
@@ -31,11 +31,25 @@ The [Online Demo](https://scottcgi.github.io/MojoJS/animation/demo/animation-dem
  
 /**
  * Animate with config.
+ *
+ * the params is optional and no order limit, they can be:
+ * 
+ * duration (Number)  : animation time.
+ * isQueue  (Boolean) : inqueue or concurrent.                       
+ * complete (Function): complete callback.                       
+ * args     (Array)   : complete function args.
+ * easing   (String)  : easing function name.
+ * config   (Object)  : params in object and three more settings:
+ *   {
+ *       id       (String) : the animation id.
+ *       appendTo (String) : callback when animation of this id is completed.
+ *       delay    (Number) : delay time before animation starts.
+ *   }  
  * 
  * @param  {Object} animStyle 
  * @return {Object} animation
  */
- animation.animate(animStyle, params);
+ animation.animate(animStyle, params[duration, isQueue, complete, args, easing, config]);
 ```
 
 
@@ -45,7 +59,4 @@ The [Online Demo](https://scottcgi.github.io/MojoJS/animation/demo/animation-dem
 #### Features
 
 * Support CSS 3 Selector full and more.
-
-
-
 

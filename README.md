@@ -1,7 +1,7 @@
 MojoJS v2.0.0
 =============
 
-It is a JavaScript library that includes **Animation Engine** and **CSS Selector Engine**.
+MojoJS is a JavaScript library that includes **Animation Engine** and **CSS Selector Engine**. And it's licensed under the [MIT License](https://github.com/scottcgi/MojoJS/blob/master/LICENSE "Mojoc Under MIT License").
 
 ### Animation Engine
 
@@ -143,4 +143,4 @@ E:nth-last-of-type(n)
 
 ## Support
 
-I hope if you are **enjoying** my work and the source code is **useful** for you, :coffee: maybe you could buy me a coffee via [[Paypal-0.99]](https://www.paypal.me/PayScottcgi/0.99):kissing_heart:~
+I hope if you are **enjoying** my work and the source code is **useful** for you, :coffee: maybe you could buy me a coffee via [Paypal-0.99](https://www.paypal.me/PayScottcgi/0.99):kissing_heart:~

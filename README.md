@@ -1,5 +1,5 @@
-MojoJS
-======
+MojoJS v2.0.0
+=============
 
 It is a JavaScript library that includes **Animation Engine** and **CSS Selector Engine**.
 
@@ -66,7 +66,7 @@ The [Online Demo](https://scottcgi.github.io/MojoJS/animation/demo/animation-dem
 
 The [MojoJS.query](https://github.com/scottcgi/MojoJS/blob/master/query/MojoJS.query.js) is a pure JS **CSS Selector Engine**. 
 
-It not only supports **full CSS3 Selectors** and more and easy to extend, but also has very **simple**, **beautiful**, **easy-to-understand** code structure and implementation ideas.
+It not only supports **full CSS3 Selectors** and more and **easy-to-extend**, but also has very **simple**, **beautiful**, **easy-to-understand** code structure and implementation ideas.
 
 The [Online Speed-Test](https://scottcgi.github.io/MojoJS/query/speed-test/index.html) shows the support selectors and speed comparison with native query.
 
@@ -119,7 +119,7 @@ E:nth-last-child(n)
 E:nth-of-type(n)
 E:nth-last-of-type(n)
 
-// Extra
+// Extra Selectors
 
 :not(E)
 :not(E.cls)
@@ -141,3 +141,6 @@ E:nth-last-of-type(n)
 :nth
 ```
 
+## Support
+
+I hope if you are enjoying my work and the source code is useful for you, maybe you could buy me a coffee via [Paypal-0.99](https://www.paypal.me/PayScottcgi/0.99). :coffee: :kissing_heart:

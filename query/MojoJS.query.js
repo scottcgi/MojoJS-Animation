@@ -1040,9 +1040,9 @@
     /**
      * Select HTMLElements by css seletor and context.
      * 
-     * @param  {String} selector
-     * @param  {String | HTMLElement | Array<HTMLElement> | NodeList} context (optional)
-     * @return {Array} HTMLElements Array
+     * @param  {String}                                                          selector
+     * @param  {String (selector) | HTMLElement | Array<HTMLElement> | NodeList} context (optional)
+     * @return {Array<HTMLElement>}                                              HTMLElements
      */
     window.MojoJS.query = function(selector, context) {
         return parser.query(selector, context);

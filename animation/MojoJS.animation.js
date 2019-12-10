@@ -16,7 +16,7 @@
         /**
          * Animation object.
          * 
-         * @param {String | Array | NodeList | HTMLElement} targets
+         * @param {String (selector) | Array<HTMLElement> | NodeList | HTMLElement} targets
          */
         Animation = function(targets) {
             switch (typeof targets) {
@@ -606,7 +606,7 @@
     Animation.prototype = {
 
         /**
-         * Create Animation object and animate it.
+         * Animate with config.
          * 
          * @param  {Object} animStyle 
          * @return {Object} animation
@@ -697,7 +697,7 @@
     /**
      * Create Animation object.
      * 
-     * @param  {String | Array | NodeList | HTMLElement} targets
+     * @param  {String (selector) | Array<HTMLElement> | NodeList | HTMLElement} targets
      * @return {Object}                                  aniamtion
      */
     window.MojoJS.createAnimation = function(targets) {

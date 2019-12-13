@@ -17,50 +17,61 @@ The [Online Demo](https://scottcgi.github.io/MojoJS/animation/demo/animation-dem
 * Support delay animation.
 * Support complete callback on animate (not on element).
 * Support configurable chained complete callbacks.
-* Support fully compatible standard easing effect.
+* Support fully compatible standard easing effect and more.
+  ```js
+  linear
+  quadraticIn,   quadraticOut,   quadraticInOut
+  cubicIn,       cubicOut,       cubicInOut
+  quarticIn,     quarticOut,     quarticInOut
+  quinticIn,     quinticOut,     quinticInOut
+  exponentialIn, exponentialOut, exponentialInOut
+  sineIn,        sineOut,        sineInOut
+  circularIn,    circularOut,    circularInOut
+  elasticIn,     elasticOut,     elasticInOut
+  backIn,        backOut,        backInOut,  backInExponentialOut, backInElasticOut
+  bounceIn,      bounceOut,      bounceInOut,
+  ```
 * Creative default configuration API.
-
-```js
-/**
- * Create animation object.
- *
- * @param {String (selector) | Array<HTMLElement> | NodeList | HTMLElement} targets
- */
- MojoJS.createAnimation(targets)
+  ```js
+  /**
+   * Create animation object.
+   *
+   * @param {String (selector) | Array<HTMLElement> | NodeList | HTMLElement} targets
+   */
+   MojoJS.createAnimation(targets)
  
  
-/**
- * Animate with config.
- *
- * the variable params is optional and no order limit, they can be:
- * 
- * duration (Number)  : animation time.
- * isQueue  (Boolean) : inqueue or concurrent.                       
- * complete (Function): complete callback.                       
- * args     (Array)   : complete function args.
- * easing   (String)  : easing function name.
- * config   (Object)  : variable params in object and three more settings:
- *   {
- *       id       (String) : the animation id.
- *       appendTo (String) : callback when animation of this id is completed.
- *       delay    (Number) : delay time before animation starts.
- *   }  
- * 
- * @param  {Object} animStyle 
- * @return {Object} animation
- */
- animation.animate(animStyle[, duration, isQueue, complete, args, easing, config]);
+  /**
+   * Animate with config.
+   *
+   * the variable params is optional and no order limit, they can be:
+   * 
+   * duration (Number)  : animation time.
+   * isQueue  (Boolean) : inqueue or concurrent.                       
+   * complete (Function): complete callback.                       
+   * args     (Array)   : complete function args.
+   * easing   (String)  : easing function name.
+   * config   (Object)  : variable params in object and three more settings:
+   *   {
+   *       id       (String) : the animation id.
+   *       appendTo (String) : callback when animation of this id is completed.
+   *       delay    (Number) : delay time before animation starts.
+   *   }  
+   * 
+   * @param  {Object} animStyle 
+   * @return {Object} animation
+   */
+   animation.animate(animStyle[, duration, isQueue, complete, args, easing, config]);
 
 
-/**
- * The animation complete callback function.
- *
- * args    (Array)     : apply from [config.args].
- * thisArg (Animation) : apply from current animation.
- */
- function completeCallback([arg0, arg1, ...]);
- 
-```
+  /**
+   * The animation complete callback function.
+   *
+   * args    (Array)     : apply from [config.args].
+   * thisArg (Animation) : apply from current animation.
+   */
+   function completeCallback([arg0, arg1, ...]);
+  ```
 
 ### CSS Selector Engine
 

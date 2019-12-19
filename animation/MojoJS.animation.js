@@ -712,6 +712,13 @@
     animator.unitEl.id            = "MojoJS-animation-unitEl";
 
 
+    /**
+     * The original algorithms of easing functions come from Robert Penner 
+     * http://robertpenner.com/easing/
+     * 
+     * The licenses are MIT and BSD 
+     * http://robertpenner.com/easing_terms_of_use.html
+     */
     animator.easing = {
 
         linear: function(time) {

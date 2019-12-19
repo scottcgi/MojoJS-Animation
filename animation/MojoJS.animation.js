@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2012-2019 scott.cgi All Rights Reserved.
  * 
  * This source code belongs to project MojoJS, which is an animation Engine hosted on GitHub,
@@ -11,6 +11,7 @@
  * Update : 2019-10-08
  * Version: 2.0.0
  */
+
 (function(window) { 
     var 
         /**

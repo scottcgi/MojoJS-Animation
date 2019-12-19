@@ -1,7 +1,7 @@
-/**
+/*
  * Copyright (c) 2012-2019 scott.cgi All Rights Reserved.
  * 
- * This source code belongs to project MojocJS, which is a CSS Seletor Engine hosted on GitHub,
+ * This source code belongs to project MojocJS, which is a CSS Seletor Engine hosted on GitHub, 
  * and licensed under the MIT License.
  * 
  * License: https://github.com/scottcgi/MojoJS/blob/master/LICENSE
@@ -11,6 +11,7 @@
  * Update : 2019-10-8
  * Version: 2.0.0
  */
+
 (function(window) {
     
     var   

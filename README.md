@@ -7,12 +7,12 @@ MojoJS is a JavaScript library that includes [**Animation Engine**](#animation-e
 * Release changes in [ChangeLog](https://github.com/scottcgi/MojoJS/blob/master/ChangeLog.md).
 
 
-### License
+## License
 
 MojoJS is licensed under the [MIT License](https://github.com/scottcgi/MojoJS/blob/master/LICENSE "Mojoc Under MIT License").
 
 
-### Animation Engine
+## Animation Engine
 
 The [MojoJS.animation](https://github.com/scottcgi/MojoJS/blob/master/animation/MojoJS.animation.js) is a very **lightweight** and **powerful** JS animation library. It also has very **simple**, **beautiful**, **easy-to-understand** source code and **"Make-You-Happy"** API.
 
@@ -82,7 +82,7 @@ The [Online Demo](https://scottcgi.github.io/MojoJS/animation/demo/animation-dem
    function completeCallback([arg0, arg1, ...]);
   ```
 
-### CSS Selector Engine
+## CSS Selector Engine
 
 The [MojoJS.query](https://github.com/scottcgi/MojoJS/blob/master/query/MojoJS.query.js) is a pure JS **CSS Selector Engine**. 
 
@@ -163,4 +163,4 @@ E:nth-last-of-type(n)
 
 ## Support
 
-If the source code is **useful** for you, maybe you could buy me a coffee via [Paypal-0.99](https://www.paypal.me/PayScottcgi/0.99) :coffee: :kissing_heart:~
+If the source code is **useful** for you, maybe you could buy me a coffee via [Paypal-0.99](https://www.paypal.me/PayScottcgi/0.99) :coffee:

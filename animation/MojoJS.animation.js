@@ -820,13 +820,13 @@
 
 
         sineIn: function(time) {
-            return 1.0 - Math.cos(time * 1.570796326794897);
+            return 1.0 - Math.cos(time * 1.570796);
         },
         sineOut: function(time) {
-            return Math.sin(time * 1.570796326794897);
+            return Math.sin(time * 1.570796);
         },
         sineInOut: function(time) {
-            return 0.5 * (1.0 - Math.cos(time * 3.141592653589793));
+            return 0.5 * (1.0 - Math.cos(time * 3.141593));
         }, 
 
 
@@ -852,7 +852,7 @@
                 return time;
             }
         
-            return -Math.pow(2.0, 10.0 * time - 10.0) * Math.sin((3.33 * time - 3.58) * 6.283185307179586);
+            return -Math.pow(2.0, 10.0 * time - 10.0) * Math.sin(20.923007 * time - 22.493803);
         },
         elasticOut: function(time) {
             if (time <= 0.0 || time >= 1.0)
@@ -860,7 +860,7 @@
                 return time;
             }
         
-            return Math.pow(2.0, -10.0 * time) * Math.sin((3.33 * time - 0.25) * 6.283185307179586) + 1.0;
+            return Math.pow(2.0, -10.0 * time) * Math.sin(20.923007 * time - 1.570796) + 1.0;
         },
         elasticInOut: function(time) {
             if (time <= 0.0 || time >= 1.0) {
@@ -868,10 +868,10 @@
             }
         
             if (time < 0.5) {
-                return -0.5 * Math.pow(2.0, 20.0 * time - 10.0) * Math.sin((4.45 * time - 2.475) * 6.283185307179586);
+                return -0.5 * Math.pow(2.0, 20.0 * time - 10.0) * Math.sin(27.960175 * time - 15.550884);
             } 
-
-            return Math.pow(2.0, -20.0 * time + 10.0) * Math.sin((4.45 * time - 2.475) * 6.283185307179586) * 0.5 + 1.0;
+    
+            return Math.pow(2.0, -20.0 * time + 10.0) * Math.sin(27.960175 * time - 15.550884) * 0.5 + 1.0;
         }, 
 
 
@@ -902,7 +902,7 @@
                 return time * time * (14.379636 * time - 5.189818);
             } 
 
-            return Math.pow(2.0, -20.0 * time + 10.0) * Math.sin((4.45 * time - 2.475) * 6.283185307179586) * 0.5 + 1.0;
+            return Math.pow(2.0, -20.0 * time + 10.0) * Math.sin(27.960175 * time - 15.550884) * 0.5 + 1.0;
         },
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2012-2019 scott.cgi All Rights Reserved.
+ * Copyright (c) scott.cgi All Rights Reserved.
  * 
  * This source code belongs to project MojocJS, which is a CSS Seletor Engine hosted on GitHub, 
  * and licensed under the MIT License.

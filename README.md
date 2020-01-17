@@ -1,7 +1,9 @@
 MojoJS-Animation
 ================
 
-MojoJS-Animation is a very **lightweight** and **powerful** javascript Animation engine. It also has very **simple**, **beautiful**, **easy-to-understand** source code and **"Make-You-Happy"** API.
+MojoJS-Animation is a very **lightweight** and **powerful** javascript **Animation** engine. 
+
+It also has very **simple**, **beautiful**, **easy-to-understand** source code and **"Make-You-Happy"** API.
 
 * Released version in [releases](https://github.com/scottcgi/MojoJS-Animation/releases).
 * Release changes in [ChangeLog](https://github.com/scottcgi/MojoJS-Animation/blob/master/ChangeLog.md).

@@ -1,5 +1,5 @@
-MojoJS v2.0.1
-=============
+MojoJS
+======
 
 MojoJS is a JavaScript library that includes [**Animation Engine**](#animation-engine) and [**CSS Selector Engine**](#css-selector-engine).
 

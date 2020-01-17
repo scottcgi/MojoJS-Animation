@@ -1,24 +1,18 @@
-MojoJS
-======
+MojoJS-Animation
+================
 
-MojoJS is a JavaScript library that includes [**Animation Engine**](#animation-engine) and [**CSS Selector Engine**](#css-selector-engine).
+MojoJS-Animation is a very **lightweight** and **powerful** JS animation library. It also has very **simple**, **beautiful**, **easy-to-understand** source code and **"Make-You-Happy"** API.
 
-* Released version in [releases](https://github.com/scottcgi/MojoJS/releases).
-* Release changes in [ChangeLog](https://github.com/scottcgi/MojoJS/blob/master/ChangeLog.md).
+* Released version in [releases](https://github.com/scottcgi/MojoJS-Animation/releases).
+* Release changes in [ChangeLog](https://github.com/scottcgi/MojoJS-Animation/blob/master/ChangeLog.md).
 
+The [Online Demo](https://scottcgi.github.io/MojoJS-Animation/demo/animation-demo.html) shows the effect and code usage.
 
 ## License
 
-MojoJS is licensed under the [MIT License](https://github.com/scottcgi/MojoJS/blob/master/LICENSE "Mojoc Under MIT License").
+MojoJS-Animation is licensed under the [MIT License](https://github.com/scottcgi/MojoJS-Animation/blob/master/LICENSE "MojoJS-Animation Under MIT License").
 
-
-## Animation Engine
-
-The [MojoJS.animation](https://github.com/scottcgi/MojoJS/blob/master/animation/MojoJS.animation.js) is a very **lightweight** and **powerful** JS animation library. It also has very **simple**, **beautiful**, **easy-to-understand** source code and **"Make-You-Happy"** API.
-
-The [Online Demo](https://scottcgi.github.io/MojoJS/animation/demo/animation-demo.html) shows the effect and code usage.
-
-#### Features
+## Features
 
 * Support CSS and Transform properties animation.
 * Support queue and concurrent animation.
@@ -40,7 +34,9 @@ The [Online Demo](https://scottcgi.github.io/MojoJS/animation/demo/animation-dem
   backIn,        backOut,        backInOut,  backInExponentialOut, backInElasticOut
   bounceIn,      bounceOut,      bounceInOut,
   ```
-* Creative default configuration API.
+
+## How to use
+
   ```js
   /**
    * Create animation object.
@@ -81,85 +77,6 @@ The [Online Demo](https://scottcgi.github.io/MojoJS/animation/demo/animation-dem
    */
    function completeCallback([arg0, arg1, ...]);
   ```
-
-## CSS Selector Engine
-
-The [MojoJS.query](https://github.com/scottcgi/MojoJS/blob/master/query/MojoJS.query.js) is a pure JS **CSS Selector Engine**. 
-
-It not only supports **full CSS3 Selectors** and more and **easy-to-extend**, but also has very **simple**, **beautiful**, **easy-to-understand** code structure and implementation ideas.
-
-The [Online Speed-Test](https://scottcgi.github.io/MojoJS/query/speed-test/index.html) shows the support selectors and speed comparison with native query.
-
-```js
-/**
- * Select HTMLElements by css seletor and context.
- * 
- * @param  {String}                                                          selector
- * @param  {String (selector) | HTMLElement | Array<HTMLElement> | NodeList} context (optional)
- * @return {Array<HTMLElement>}                                              HTMLElements Array
- */
- MojoJS.query(selector, context);
-```
-
-#### Support CSS Selectors
-
-```css
-*
-#id
-E
-E.cls
-E F
-E > F
-E + F
-E ~ F
-
-E[foo]  
-E[foo="bar"]    
-E[foo~="bar"]   
-E[foo^="bar"]   
-E[foo$="bar"]   
-E[foo*="bar"]   
-E[foo|="en"]
-
-E:checked
-E:disabled
-E:enabled
-E:empty
-
-E:only-child
-E:last-child
-E:first-child
-E:first-of-type
-E:last-of-type
-E:only-of-type
-
-E:not(s)
-E:nth-child(n)
-E:nth-last-child(n)
-E:nth-of-type(n)
-E:nth-last-of-type(n)
-
-// Extra Selectors
-
-:not(E)
-:not(E.cls)
-:not(:not(E,F))
-
-:has(E)
-:has(E.cls)
-:has(:not(E,F))
-:has(E > F)
-
-[NAME!=VALUE]
-:contains(TEXT)
-:selected
-
-:first
-:last
-:even
-:odd
-:nth
-```
 
 ## Support
 

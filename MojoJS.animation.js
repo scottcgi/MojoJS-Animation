@@ -1,11 +1,11 @@
 /*
  * Copyright (c) scott.cgi All Rights Reserved.
  * 
- * This source code belongs to project MojoJS, which is an animation Engine hosted on GitHub,
+ * This source code belongs to project MojoJS-Animation, which is a JS animation Engine hosted on GitHub,
  * and licensed under the MIT License.
  * 
- * License: https://github.com/scottcgi/MojoJS/blob/master/LICENSE
- * GitHub : https://github.com/scottcgi/MojoJS
+ * License: https://github.com/scottcgi/MojoJS-Animation/blob/master/LICENSE
+ * GitHub : https://github.com/scottcgi/MojoJS-Animation
  * 
  * Since  : 2010-05-16
  * Update : 2019-10-08

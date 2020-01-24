@@ -9,7 +9,7 @@
  * 
  * Since  : 2010-05-16
  * Update : 2019-10-08
- * Version: 2.0.1
+ * Version: 2.0.2
  */
 
 (function(window) { 

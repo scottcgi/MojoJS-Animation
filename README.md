@@ -37,6 +37,10 @@ MojoJS-Animation is licensed under the [MIT License](https://github.com/scottcgi
   bounceIn,      bounceOut,      bounceInOut,
   ```
 
+## Code Structure
+![](https://github.com/scottcgi/MojoJS-Animation/raw/master/demo/code-structure.png "MojoJS-Animation Code Structure")
+
+
 ## How to use
 
   ```js

@@ -153,15 +153,25 @@
                 <pre id="pre2" class="target-pre" style="height: 0;">
                 <code id="code2" class="lang-javascript">
     MojoJS.createAnimation("#target")
-          .animate({left: 0, top: 0},                       0, {id      : "reset"})
-          .animate({left: 500      }, false,             1000, {appendTo: "reset"})
-          .animate({top: "-=40"    }, "linear",           100)
-          .animate({top: "+=40"    }, "linear",           100)
-          .animate({top: "-=40"    }, "linear",           150)
-          .animate({top: "+=40"    }, "linear",           150)
-          .animate({top: "-=10"    }, "linear",           100)
-          .animate({top: "+=10"    }, "linear",           100)
-          .animate({left: 0, top: 0}, "backInElasticOut", 600, {delay   : 500});</code>
+          .animate({left: 500, borderRadius: 50}, 1000)
+          .animate({left:   0, borderRadius:  5}, 1000, {delay: 200})
+
+    // start a new animation    
+    MojoJS.createAnimation("#target")    
+          .animate({width: "50px", height: "50px"}, 200)
+          .animate({
+              backgroundColor:  "#000",
+              borderTopColor:   "#000",
+              borderRightColor: "#000",
+              borderLeftColor:  "#000",
+              borderBottomColor:"#000",
+          }, 400, "linear")		
+          .animate({backgroundColor:  "rgb(63, 81, 181, 0)"}, 500)	
+          .animate({width: 0,         height: 0            }, 200)			
+          .animate({borderBottomColor:"#CC3399"            }, 200)
+          .animate({borderLeftColor:  "#999900"            }, 200)
+          .animate({borderTopColor:   "#FF9933"            }, 200)
+          .animate({borderRightColor: "#339999"            }, 200)</code>
                 </pre>                 
                
             </div>           
@@ -173,15 +183,19 @@
                 <pre id="pre3" class="target-pre" style="height: 0;">
                 <code id="code3" class="lang-javascript">
     MojoJS.createAnimation("#target")
-          .animate({left: 0, top: 0},                       0, {id      : "reset"})
-          .animate({left: 500      }, false,             1000, {appendTo: "reset"})
-          .animate({top: "-=40"    }, "linear",           100)
-          .animate({top: "+=40"    }, "linear",           100)
-          .animate({top: "-=40"    }, "linear",           150)
-          .animate({top: "+=40"    }, "linear",           150)
-          .animate({top: "-=10"    }, "linear",           100)
-          .animate({top: "+=10"    }, "linear",           100)
-          .animate({left: 0, top: 0}, "backInElasticOut", 600, {delay   : 500});</code>
+          .animate({translateX: 100,     rotateX: 360})
+          .animate({translateX: 200,     rotateY: 360})
+          .animate({translateX: 300,     rotateZ: 360})
+          .animate({translateX: "+=100", skewX:   40}, "backOut")
+          .animate({translateX: "+=100", skewY:   40}, "backOut")
+          .animate({
+              translateX: 0, 
+              rotateY:    0,
+              rotateX:    0,
+              rotateZ:    0,
+              skewY:      0,
+              skewX:      0,   
+          }, 1000);</code>
                 </pre>                  
                
             </div>        
@@ -341,8 +355,7 @@
                             rotateZ:    0,
                             skewY:      0,
                             skewX:      0,   
-                        }, 1000)
-                    ;
+                        }, 1000);
                     break;
 
                 case 4:

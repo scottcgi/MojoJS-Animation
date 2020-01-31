@@ -699,7 +699,7 @@
      * Create Animation object.
      * 
      * @param  {String (selector) | Array<HTMLElement> | NodeList | HTMLElement} targets
-     * @return {Object}                                  aniamtion
+     * @return {Object}                                                          aniamtion
      */
     window.MojoJS.createAnimation = function(targets) {
         return new Animation(targets);

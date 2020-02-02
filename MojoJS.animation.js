@@ -8,8 +8,8 @@
  * GitHub : https://github.com/scottcgi/MojoJS-Animation
  * 
  * Since  : 2010-05-16
- * Update : 2019-10-08
- * Version: 2.0.2
+ * Update : 2020-2-2
+ * Version: 2.0.3
  */
 
 (function(window) { 
@@ -901,6 +901,10 @@
             if (time < 0.5) {
                 return time * time * (14.379636 * time - 5.189818);
             } 
+
+            if (time >= 1.0) {
+                return time;
+            }
 
             return Math.pow(2.0, -20.0 * time + 10.0) * Math.sin(27.960175 * time - 15.550884) * 0.5 + 1.0;
         },

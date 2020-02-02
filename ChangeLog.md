@@ -1,3 +1,9 @@
+## v2.0.3
+_`2020.2.2 UTC+8 11:34`_
+
+* Fix precision problem of BackInElasticOut.
+
+
 ## v2.0.2
 _`2020.1.24 UTC+8 14:59`_
 

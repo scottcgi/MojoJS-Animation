@@ -1,5 +1,4 @@
-MojoJS-Animation
-================
+## MojoJS-Animation v2.0.3
 
 MojoJS-Animation is a very **lightweight** and **powerful** javascript **Animation** engine. 
 

@@ -4,7 +4,7 @@ MojoJS-Animation is a very **lightweight** and **powerful** javascript **Animati
 
 It also has very **simple**, **beautiful**, **easy-to-understand** source code and **"Make-You-Happy"** API.
 
-* Released version in [releases](https://github.com/scottcgi/MojoJS-Animation/releases).
+* Released versions in [releases](https://github.com/scottcgi/MojoJS-Animation/releases).
 * Release changes in [ChangeLog](https://github.com/scottcgi/MojoJS-Animation/blob/master/ChangeLog.md).
 
 The [Online Demo](https://scottcgi.github.io/MojoJS-Animation/demo/animation-demo.html) shows the effect and code usage.

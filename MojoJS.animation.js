@@ -8,8 +8,8 @@
  * GitHub : https://github.com/scottcgi/MojoJS-Animation
  * 
  * Since  : 2010-05-16
- * Update : 2020-2-2
- * Version: 2.0.3
+ * Update : 2021-8-17
+ * Version: 2.1
  */
 
 (function(window) { 
@@ -620,7 +620,7 @@
                     isQueue  : true,                       
                     complete : null,                       
                     args     : null,
-                    easing   : "sineOut",
+                    easing   : "smooth",
                     steps    : null,
                     delay    : 0,
                     id       : "",
@@ -723,6 +723,10 @@
 
         linear: function(time) {
             return time;
+        },
+
+        smooth: function(time) {
+            return time * time * (3.0 - 2.0 * time);
         },
 
 

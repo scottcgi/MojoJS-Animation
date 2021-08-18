@@ -1,3 +1,11 @@
+## v2.1.0
+_`2021.8.18 UTC+8 10:58`_
+
+* Add `smooth` function and set it as default ease.
+* Optimize the execution of the `Queue Action`.  
+* Improve the code comments.
+
+
 ## v2.0.3
 _`2020.2.2 UTC+8 11:34`_
 

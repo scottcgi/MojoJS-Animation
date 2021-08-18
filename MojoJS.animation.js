@@ -9,7 +9,7 @@
  * 
  * Since  : 2010-05-16
  * Update : 2021-8-17
- * Version: 2.1
+ * Version: 2.1.0
  */
 
 (function(window) { 
@@ -32,8 +32,8 @@
 
             // queue configs
             this.queConfigs = [];
-            // current running queue config
-            this.queConfig  = null;
+            // whether to dequeue the queue action to play
+            this.isDequeue  = true;
             // current running actions include shift queue and nonqueued
             this.curActions = [];
             // whether animation is playing
@@ -58,7 +58,7 @@
             /**
              * Add animation with config to update array.
              * 
-             * @param {Object} animation
+             * @param {Object} anim
              * @param {Object} config 
              */
             addAnim: function(anim, config) {
@@ -117,16 +117,22 @@
                     }
                 }
 
+                if (config.isQueue) {
+                   // into queue waiting to play
+                   anim.queConfigs.push(config);
+
+                   if (anim.isDequeue) {
+                       this.dequeueAction(anim);
+                   }
+                } else {
+                    // into current to play
+                    anim.curActions.push(this.createAction(anim, config));
+                }
+
                 if (anim.isPlaying === false) {
                     this.anims.push(anim);
                     anim.isPlaying = true;
-                }
-
-                config.isQueue ?
-                    // into queue waiting to run
-                    anim.queConfigs.push(config) :
-                    // add action into curActions
-                    anim.curActions.push(this.createAction(anim, config));	
+                }                    
             },			
 
             /**
@@ -239,9 +245,8 @@
              * 
              * one action to one config.
              * 
-             * @param  {Object} animation
+             * @param  {Object} anim
              * @param  {Object} config
-             * @return {Object} action
              */
             createAction: function(anim, config) {
                 var
@@ -264,7 +269,7 @@
             /**
              * Create acton steps by config steps and els current style.
              * 
-             * @param {Object} animation 
+             * @param {Object} anim 
              * @param {Object} action 
              */
             createSteps: function(anim, action) {
@@ -387,19 +392,11 @@
              */
             update: function(deltaTime) {
                 var 
-                    anim, queConfigs, curActions, len, i;
+                    anim, curActions, len, i;
             
                 for (i = 0, len = this.anims.length; i < len; ++i) {
                     anim       = this.anims[i];
-                    queConfigs = anim.queConfigs;
                     curActions = anim.curActions;
-                    
-                    if (anim.queConfig === null && queConfigs.length !== 0) {
-                        // get one config from queue
-                        anim.queConfig = queConfigs.shift();
-                        // add queue action into current runnings
-                        curActions.push(this.createAction(anim, anim.queConfig));
-                    }
                     
                     if (curActions.length > 0) {
                         this.doActions(anim, curActions, deltaTime);
@@ -416,11 +413,28 @@
 
                 return true;
             },
+
+            /**
+             * Dequeue one action to play.
+             * 
+             * @param {Object} anim 
+             */
+            dequeueAction(anim) {
+                var 
+                    queConfigs = anim.queConfigs;
+
+                if (queConfigs.length !== 0) {
+                    // get one config from queue into curActions
+                    anim.curActions.push(this.createAction(anim, queConfigs.shift()));
+                }
+
+                anim.isDequeue = false;
+            },
             
             /**
              * Do animation current actions.
              * 
-             * @param {Object} animation
+             * @param {Object} anim
              * @param {Array}  actions
              * @param {Number} deltaTime
              */
@@ -451,12 +465,6 @@
                                 time = 1.0;
                                 actions.splice(j--, 1);
                                 --aLen;
-
-                                // check whether the action is in queue
-                                if (anim.queConfig === action.config) {
-                                    anim.queConfig = null;
-                                }
-        
                                 // action is complete
                                 completes.push(action.config);
                             }
@@ -491,6 +499,11 @@
                         for (k = 0, cLen = completes.length; k < cLen; ++k) {
                             config = completes[k];
                             
+                            if (config.isQueue) {
+                                // need to dequeue action when queue action is complete
+                                anim.isDequeue = true;
+                            }
+
                             if (config.complete !== null) {
                                 // do action callback
                                 config.complete.apply(anim, config.args);
@@ -511,6 +524,11 @@
                         }
                     }
                 }
+
+                if (anim.isDequeue)
+                {
+                    this.dequeueAction(anim);
+                }                
             },
             
             /**
@@ -610,7 +628,7 @@
          * Animate with config.
          * 
          * @param  {Object} animStyle 
-         * @return {Object} animation
+         * @return {Object} anim
          */
         animate: function(animStyle) {
             var 

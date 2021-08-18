@@ -1,4 +1,4 @@
-## MojoJS-Animation v2.0.3
+## MojoJS-Animation v2.1.0
 
 MojoJS-Animation is a very **lightweight** and **powerful** javascript **Animation** engine. 
 
@@ -23,7 +23,7 @@ MojoJS-Animation is licensed under the [MIT License](https://github.com/scottcgi
 * Support configurable chained complete callbacks.
 * Support fully compatible standard easing effect and more.
   ```js
-  linear
+  linear,        smooth,
   quadraticIn,   quadraticOut,   quadraticInOut
   cubicIn,       cubicOut,       cubicInOut
   quarticIn,     quarticOut,     quarticInOut

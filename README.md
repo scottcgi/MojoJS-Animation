@@ -44,7 +44,7 @@ MojoJS-Animation is licensed under the [MIT License](https://github.com/scottcgi
 
   ```js
   /**
-   * Create animation object.
+   * Create an animation object.
    *
    * @param {String (selector) | Array<HTMLElement> | NodeList | HTMLElement} targets
    */
@@ -54,7 +54,7 @@ MojoJS-Animation is licensed under the [MIT License](https://github.com/scottcgi
   /**
    * Animate with config.
    *
-   * the variable params is optional and no order limit, they can be:
+   * the variable params are optional and no order limit, they can be:
    * 
    * duration (Number)  : animation time.
    * isQueue  (Boolean) : inqueue or concurrent.                       
